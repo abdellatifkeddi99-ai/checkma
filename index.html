@@ -1,21 +1,19 @@
+
 <!DOCTYPE html>
 <html lang="ar" dir="rtl" id="htmlRoot">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Free VPN leak test tool. Check if your VPN leaks your real IP, WebRTC, or DNS.">
-    <meta name="keywords" content="VPN leak test, IP leak, WebRTC leak, DNS leak, VPN check, privacy">
-    <title>CHECKMA - VPN Leak Test</title>
+    <title>Privacy Policy - CHECKMA</title>
     <style>
         * { box-sizing: border-box; }
         body {
             background: #000;
             color: #fff;
             font-family: Arial, sans-serif;
-            text-align: center;
             padding: 60px 20px 20px 20px;
             margin: 0;
-            min-height: 100vh;
+            line-height: 1.8;
         }
         .lang-switch {
             position: fixed;
@@ -38,144 +36,79 @@
             font-size: 12px;
             font-weight: bold;
             cursor: pointer;
-            margin: 0;
-            width: auto;
         }
         .lang-switch button.active {
             background: #00D9FF;
             color: #000;
         }
+        .container {
+            max-width: 700px;
+            margin: 0 auto;
+            background: #111;
+            border-radius: 12px;
+            padding: 30px 20px;
+        }
         h1 {
             color: #00D9FF;
             font-size: 26px;
             margin-bottom: 5px;
+            text-align: center;
         }
         .subtitle {
             color: #888;
             font-size: 14px;
-            margin-bottom: 20px;
+            text-align: center;
+            margin-bottom: 30px;
         }
-        .box {
-            background: #111;
-            border-radius: 12px;
-            padding: 25px 20px;
-            margin: 20px auto;
-            max-width: 420px;
-            box-shadow: 0 4px 20px rgba(0, 217, 255, 0.1);
-        }
-        .status {
-            width: 70px;
-            height: 70px;
-            border-radius: 50%;
-            margin: 0 auto 15px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 36px;
-            background: #333;
-            transition: all 0.3s ease;
-        }
-        .status.safe { background: #00C853; }
-        .status.warning { background: #FFC107; color: #000; }
-        .status.danger { background: #FF1744; }
-        .ip {
-            font-size: 24px;
-            font-weight: bold;
-            color: #00D9FF;
-            margin: 15px 0;
-            word-break: break-all;
-        }
-        .info {
-            color: #888;
-            font-size: 14px;
-        }
-        .explanation {
-            background: #1a1a1a;
-            border-radius: 8px;
-            padding: 15px;
-            margin: 15px 0;
-            font-size: 14px;
-            color: #ccc;
-            text-align: start;
-            line-height: 1.7;
-            border-inline-start: 3px solid #00D9FF;
-        }
-        button.check-btn {
-            background: #fff;
-            color: #000;
-            border: none;
-            padding: 15px 30px;
-            border-radius: 8px;
-            font-size: 16px;
-            font-weight: bold;
-            width: 100%;
-            margin: 10px 0;
-            cursor: pointer;
-        }
-        button.check-btn:active { 
-            background: #00D9FF;
-            transform: scale(0.98);
-        }
-        .next-steps {
-            background: #111;
-            border-radius: 12px;
-            padding: 20px;
-            margin: 20px auto;
-            max-width: 420px;
-            text-align: start;
-            border-top: 3px solid #00D9FF;
-        }
-        .next-steps h2 {
+        h2 {
             color: #00D9FF;
             font-size: 18px;
-            margin-top: 0;
+            margin-top: 30px;
+            margin-bottom: 10px;
+            border-inline-start: 3px solid #00D9FF;
+            padding-inline-start: 10px;
         }
-        .next-steps p {
+        p, li {
             color: #ccc;
-            font-size: 14px;
-            line-height: 1.7;
+            font-size: 15px;
         }
-        .next-steps ul {
+        ul {
             padding-inline-start: 20px;
-            color: #ccc;
-            font-size: 14px;
-            line-height: 1.9;
         }
-        .vpn-box {
-            margin-top: 20px;
-            padding: 15px;
+        .box {
             background: #1a1a1a;
             border-radius: 8px;
-            text-align: center;
+            padding: 15px;
+            margin: 15px 0;
+            border-inline-start: 3px solid #FFC107;
         }
-        .vpn-box p.vpn-title {
+        .box p { margin: 5px 0; }
+        a {
             color: #00D9FF;
-            font-weight: bold;
-            margin-bottom: 15px;
-        }
-        .vpn-box a {
-            display: inline-block;
-            padding: 10px 20px;
-            border-radius: 6px;
             text-decoration: none;
-            font-weight: bold;
-            margin: 5px;
         }
-        .vpn-nord { background: #00D9FF; color: #000; }
-        .vpn-surf { background: #fff; color: #000; }
-        .vpn-note { color: #666; font-size: 11px; margin-top: 15px; }
+        a:hover { text-decoration: underline; }
+        .back {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 12px 24px;
+            background: #fff;
+            color: #000;
+            border-radius: 8px;
+            font-weight: bold;
+            text-decoration: none;
+        }
+        .back:hover { background: #00D9FF; }
         .footer {
             color: #555;
             font-size: 12px;
+            text-align: center;
             margin-top: 30px;
-            padding-bottom: 20px;
         }
-        .footer a { color: #00D9FF; text-decoration: none; margin: 0 8px; }
-        .disclaimer {
-            color: #666;
-            font-size: 11px;
-            margin-top: 15px;
-            font-style: italic;
+        hr {
+            border: none;
+            border-top: 1px solid #222;
+            margin: 30px 0;
         }
     </style>
 </head>
@@ -187,154 +120,271 @@
         <button onclick="setLang('fr')" id="btn-fr">FR</button>
     </div>
 
-    <div class="box">
-        <h1>CHECKMA</h1>
-        <p class="subtitle" data-i18n="subtitle">فحص تسريب VPN</p>
-        
-        <div class="status" id="status">⏳</div>
-        
-        <div class="ip" id="ip" data-i18n="loading">جاري الفحص...</div>
-        <div class="info" id="location">...</div>
-        
-        <div class="explanation" id="explanation" data-i18n="analyzing">
-            جاري تحليل الاتصال...
-        </div>
-        
-        <button class="check-btn" onclick="checkIP()" data-i18n="recheck">🔄 إعادة الفحص</button>
-        
-        <p class="disclaimer" data-i18n="disclaimer">
-            ⚠️ النتائج تقريبية. تحقق من مصادر أخرى.
-        </p>
-    </div>
+    <div class="container">
+        <h1 data-i18n="title">سياسة الخصوصية</h1>
+        <p class="subtitle">CHECKMA</p>
+        <p class="subtitle" data-i18n="updated">آخر تحديث: 13 أكتوبر 2026</p>
 
-    <div class="next-steps">
-        <h2 data-i18n="protect_title">🛡️ كيف تحمي نفسك؟</h2>
-        <p data-i18n="protect_desc">إذا كانت النتيجة غير آمنة، اتبع هذه الخطوات:</p>
+        <hr>
+
+        <h2 data-i18n="s1_title">1. مقدمة</h2>
+        <p data-i18n="s1_text">مرحباً بكم في CHECKMA. نحن نحترم خصوصيتكم ونلتزم بحماية بياناتكم الشخصية. توضح هذه الصفحة ما نجمعه، وكيف نستخدمه، وكيف نحمي معلوماتكم.</p>
+
+        <h2 data-i18n="s2_title">2. ما نجمعه</h2>
+        <p data-i18n="s2_text">CHECKMA هي أداة مجانية تعرض معلومات أساسية عن اتصالكم:</p>
         <ul>
-            <li data-i18n="step1">✅ استخدم VPN موثوق</li>
-            <li data-i18n="step2">✅ عطّل WebRTC في المتصفح</li>
-            <li data-i18n="step3">✅ استخدم DNS آمن (Cloudflare / NextDNS)</li>
+            <li data-i18n="s2_li1">عنوان IP العام</li>
+            <li data-i18n="s2_li2">المدينة والبلد (من IP)</li>
+            <li data-i18n="s2_li3">مزود خدمة الإنترنت (ISP)</li>
+            <li data-i18n="s2_li4">معلومات المتصفح (User Agent)</li>
+        </ul>
+        <p><strong data-i18n="s2_important">⚠️ مهم:</strong> <span data-i18n="s2_note">لا نخزن هذه المعلومات في أي قاعدة بيانات. يتم عرض المعلومات لكم مباشرة، وتُحذف عند إغلاق الصفحة.</span></p>
+
+        <h2 data-i18n="s3_title">3. كيف نستخدم المعلومات</h2>
+        <p data-i18n="s3_text">نستخدم المعلومات فقط من أجل:</p>
+        <ul>
+            <li data-i18n="s3_li1">عرض نتيجة الفحص لكم</li>
+            <li data-i18n="s3_li2">مساعدتكم في معرفة ما إذا كان VPN يعمل بشكل صحيح</li>
+        </ul>
+        <p data-i18n="s3_note">لا نستخدم المعلومات لأي غرض آخر.</p>
+
+        <h2 data-i18n="s4_title">4. ملفات تعريف الارتباط (Cookies)</h2>
+        <p data-i18n="s4_text">نستخدم فقط ملفات تعريف ارتباط تقنية ضرورية لعمل الأداة. لا نستخدم ملفات تعريف الارتباط للتتبع أو للإعلانات.</p>
+
+        <h2 data-i18n="s5_title">5. الأطراف الثالثة</h2>
+        <p data-i18n="s5_text">نستخدم الخدمات التالية:</p>
+        <ul>
+            <li><strong>ipwho.is:</strong> <span data-i18n="s5_li1">للحصول على معلومات IP</span></li>
+            <li><strong>Cloudflare Pages:</strong> <span data-i18n="s5_li2">للاستضافة</span></li>
+        </ul>
+        <p data-i18n="s5_note">هذه الخدمات لديها سياسات الخصوصية الخاصة بها.</p>
+
+        <h2 data-i18n="s6_title">6. إخلاء المسؤولية</h2>
+        <div class="box">
+            <p>⚠️ <strong data-i18n="s6_b1">النتائج تقريبية:</strong> <span data-i18n="s6_t1">تقدم الأداة نتائج تقريبية، وليست مضمونة بنسبة 100%.</span></p>
+            <p>⚠️ <strong data-i18n="s6_b2">حدود المسؤولية:</strong> <span data-i18n="s6_t2">CHECKMA غير مسؤولة عن أي قرار يتخذه المستخدم بناءً على النتائج.</span></p>
+            <p>⚠️ <strong data-i18n="s6_b3">مسؤولية المستخدم:</strong> <span data-i18n="s6_t3">المستخدم مسؤول عن التحقق من النتائج من مصادر أخرى.</span></p>
+        </div>
+
+        <h2 data-i18n="s7_title">7. الروابط التابعة</h2>
+        <p data-i18n="s7_text">قد تحتوي الأداة على روابط تابعة (Affiliate) لخدمات VPN. إذا اشترى المستخدم من خلالها، قد نحصل على عمولة. هذا لا يؤثر على رأينا في الخدمات.</p>
+
+        <h2 data-i18n="s8_title">8. حقوق المستخدم</h2>
+        <p data-i18n="s8_text">لديكم الحق في:</p>
+        <ul>
+            <li data-i18n="s8_li1">معرفة ما نجمعه</li>
+            <li data-i18n="s8_li2">طلب حذف بياناتكم</li>
+            <li data-i18n="s8_li3">التواصل معنا لأي استفسار</li>
         </ul>
 
-        <div class="vpn-box">
-            <p class="vpn-title" data-i18n="vpn_choose">🔒 اختر VPN موثوق:</p>
-            <a href="https://nordvpn.com" target="_blank" class="vpn-nord">NordVPN</a>
-            <a href="https://surfshark.com" target="_blank" class="vpn-surf">Surfshark</a>
-            <p class="vpn-note" data-i18n="affiliate_note">* روابط تابعة. قد نحصل على عمولة عند الشراء.</p>
-        </div>
-    </div>
+        <h2 data-i18n="s9_title">9. الأمان</h2>
+        <p data-i18n="s9_text">نستخدم اتصالاً مشفراً (HTTPS) لحماية المعلومات التي تمر بين متصفحكم والموقع.</p>
 
-    <p class="footer">
-        <span data-i18n="footer">CHECKMA © 2026 — أدوات مجانية للخصوصية</span>
-        <br><br>
-        <a href="privacy.html" data-i18n="privacy_link">سياسة الخصوصية</a>
-    </p>
+        <h2 data-i18n="s10_title">10. التغييرات</h2>
+        <p data-i18n="s10_text">قد نحدّث هذه السياسة من وقت لآخر. التغييرات تكون فعالة مباشرة بعد نشرها في هذه الصفحة.</p>
+
+        <h2 data-i18n="s11_title">11. التواصل</h2>
+        <p data-i18n="s11_text">إذا كان لديكم أي استفسار، تواصلوا معنا:</p>
+        <p>📧 <a href="mailto:checkma.contact@gmail.com">checkma.contact@gmail.com</a></p>
+
+        <hr>
+
+        <div style="text-align: center;">
+            <a href="index.html" class="back" data-i18n="back">← العودة إلى الأداة</a>
+        </div>
+
+        <p class="footer">CHECKMA © 2026</p>
+    </div>
 
     <script>
         const translations = {
             ar: {
-                subtitle: "فحص تسريب VPN",
-                loading: "جاري الفحص...",
-                analyzing: "جاري تحليل الاتصال...",
-                recheck: "🔄 إعادة الفحص",
-                disclaimer: "⚠️ النتائج تقريبية. تحقق من مصادر أخرى.",
-                protect_title: "🛡️ كيف تحمي نفسك؟",
-                protect_desc: "إذا كانت النتيجة غير آمنة، اتبع هذه الخطوات:",
-                step1: "✅ استخدم VPN موثوق",
-                step2: "✅ عطّل WebRTC في المتصفح",
-                step3: "✅ استخدم DNS آمن (Cloudflare / NextDNS)",
-                vpn_choose: "🔒 اختر VPN موثوق:",
-                affiliate_note: "* روابط تابعة. قد نحصل على عمولة عند الشراء.",
-                footer: "CHECKMA © 2026 — أدوات مجانية للخصوصية",
-                privacy_link: "سياسة الخصوصية",
-                safe_title: "✅ اتصالك آمن!",
-                safe_desc: "الـ IP الظاهر هو IP سيرفر VPN، وليس IP الحقيقي.",
-                warning_title: "⚠️ الـ IP الحقيقي مكشوف!",
-                warning_desc: "الـ IP الظاهر هو IP مزود الخدمة",
-                warning_desc2: "إذا كنت تستخدم VPN، فهذا يعني أنه يسرّب بياناتك.",
-                error: "❌ حدث خطأ. حاول مرة أخرى.",
-                error_conn: "❌ تعذر الاتصال بالخادم. تحقق من اتصالك.",
-                error_ip: "خطأ",
-                error_loc: "تعذر جلب المعلومات",
-                error_net: "تحقق من الإنترنت"
+                title: "سياسة الخصوصية",
+                updated: "آخر تحديث: 13 أكتوبر 2026",
+                s1_title: "1. مقدمة",
+                s1_text: "مرحباً بكم في CHECKMA. نحن نحترم خصوصيتكم ونلتزم بحماية بياناتكم الشخصية. توضح هذه الصفحة ما نجمعه، وكيف نستخدمه، وكيف نحمي معلوماتكم.",
+                s2_title: "2. ما نجمعه",
+                s2_text: "CHECKMA هي أداة مجانية تعرض معلومات أساسية عن اتصالكم:",
+                s2_li1: "عنوان IP العام",
+                s2_li2: "المدينة والبلد (من IP)",
+                s2_li3: "مزود خدمة الإنترنت (ISP)",
+                s2_li4: "معلومات المتصفح (User Agent)",
+                s2_important: "⚠️ مهم:",
+                s2_note: "لا نخزن هذه المعلومات في أي قاعدة بيانات. يتم عرض المعلومات لكم مباشرة، وتُحذف عند إغلاق الصفحة.",
+                s3_title: "3. كيف نستخدم المعلومات",
+                s3_text: "نستخدم المعلومات فقط من أجل:",
+                s3_li1: "عرض نتيجة الفحص لكم",
+                s3_li2: "مساعدتكم في معرفة ما إذا كان VPN يعمل بشكل صحيح",
+                s3_note: "لا نستخدم المعلومات لأي غرض آخر.",
+                s4_title: "4. ملفات تعريف الارتباط (Cookies)",
+                s4_text: "نستخدم فقط ملفات تعريف ارتباط تقنية ضرورية لعمل الأداة. لا نستخدم ملفات تعريف الارتباط للتتبع أو للإعلانات.",
+                s5_title: "5. الأطراف الثالثة",
+                s5_text: "نستخدم الخدمات التالية:",
+                s5_li1: "للحصول على معلومات IP",
+                s5_li2: "للاستضافة",
+                s5_note: "هذه الخدمات لديها سياسات الخصوصية الخاصة بها.",
+                s6_title: "6. إخلاء المسؤولية",
+                s6_b1: "النتائج تقريبية:",
+                s6_t1: "تقدم الأداة نتائج تقريبية، وليست مضمونة بنسبة 100%.",
+                s6_b2: "حدود المسؤولية:",
+                s6_t2: "CHECKMA غير مسؤولة عن أي قرار يتخذه المستخدم بناءً على النتائج.",
+                s6_b3: "مسؤولية المستخدم:",
+                s6_t3: "المستخدم مسؤول عن التحقق من النتائج من مصادر أخرى.",
+                s7_title: "7. الروابط التابعة",
+                s7_text: "قد تحتوي الأداة على روابط تابعة (Affiliate) لخدمات VPN. إذا اشترى المستخدم من خلالها، قد نحصل على عمولة. هذا لا يؤثر على رأينا في الخدمات.",
+                s8_title: "8. حقوق المستخدم",
+                s8_text: "لديكم الحق في:",
+                s8_li1: "معرفة ما نجمعه",
+                s8_li2: "طلب حذف بياناتكم",
+                s8_li3: "التواصل معنا لأي استفسار",
+                s9_title: "9. الأمان",
+                s9_text: "نستخدم اتصالاً مشفراً (HTTPS) لحماية المعلومات التي تمر بين متصفحكم والموقع.",
+                s10_title: "10. التغييرات",
+                s10_text: "قد نحدّث هذه السياسة من وقت لآخر. التغييرات تكون فعالة مباشرة بعد نشرها في هذه الصفحة.",
+                s11_title: "11. التواصل",
+                s11_text: "إذا كان لديكم أي استفسار، تواصلوا معنا:",
+                back: "← العودة إلى الأداة"
             },
             en: {
-                subtitle: "VPN Leak Test",
-                loading: "Checking...",
-                analyzing: "Analyzing your connection...",
-                recheck: "🔄 Re-check",
-                disclaimer: "⚠️ Results are approximate. Verify from other sources.",
-                protect_title: "🛡️ How to protect yourself?",
-                protect_desc: "If the result is unsafe, follow these steps:",
-                step1: "✅ Use a trusted VPN",
-                step2: "✅ Disable WebRTC in browser",
-                step3: "✅ Use secure DNS (Cloudflare / NextDNS)",
-                vpn_choose: "🔒 Choose a trusted VPN:",
-                affiliate_note: "* Affiliate links. We may earn a commission on purchase.",
-                footer: "CHECKMA © 2026 — Free Privacy Tools",
-                privacy_link: "Privacy Policy",
-                safe_title: "✅ Your connection is safe!",
-                safe_desc: "The visible IP is a VPN server, not your real IP.",
-                warning_title: "⚠️ Your real IP is exposed!",
-                warning_desc: "The visible IP is your ISP",
-                warning_desc2: "If you're using a VPN, it means it's leaking your data.",
-                error: "❌ Error occurred. Try again.",
-                error_conn: "❌ Could not connect. Check your internet.",
-                error_ip: "Error",
-                error_loc: "Could not fetch info",
-                error_net: "Check internet"
+                title: "Privacy Policy",
+                updated: "Last updated: October 13, 2026",
+                s1_title: "1. Introduction",
+                s1_text: "Welcome to CHECKMA. We respect your privacy and are committed to protecting your personal data. This page explains what we collect, how we use it, and how we protect your information.",
+                s2_title: "2. What We Collect",
+                s2_text: "CHECKMA is a free tool that displays basic information about your connection:",
+                s2_li1: "Public IP address",
+                s2_li2: "City and country (from IP)",
+                s2_li3: "Internet Service Provider (ISP)",
+                s2_li4: "Browser information (User Agent)",
+                s2_important: "⚠️ Important:",
+                s2_note: "We do not store this information in any database. Information is displayed to you directly and deleted when you close the page.",
+                s3_title: "3. How We Use Information",
+                s3_text: "We use the information only to:",
+                s3_li1: "Display the test result to you",
+                s3_li2: "Help you check if your VPN is working properly",
+                s3_note: "We do not use the information for any other purpose.",
+                s4_title: "4. Cookies",
+                s4_text: "We only use technical cookies necessary for the tool to work. We do not use tracking or advertising cookies.",
+                s5_title: "5. Third Parties",
+                s5_text: "We use the following services:",
+                s5_li1: "to get IP information",
+                s5_li2: "for hosting",
+                s5_note: "These services have their own privacy policies.",
+                s6_title: "6. Disclaimer",
+                s6_b1: "Results are approximate:",
+                s6_t1: "The tool provides approximate results, not 100% guaranteed.",
+                s6_b2: "Limitation of liability:",
+                s6_t2: "CHECKMA is not responsible for any decision made by the user based on results.",
+                s6_b3: "User responsibility:",
+                s6_t3: "The user is responsible for verifying results from other sources.",
+                s7_title: "7. Affiliate Links",
+                s7_text: "The tool may contain affiliate links for VPN services. If the user purchases through them, we may earn a commission. This does not affect our opinion on the services.",
+                s8_title: "8. User Rights",
+                s8_text: "You have the right to:",
+                s8_li1: "Know what we collect",
+                s8_li2: "Request deletion of your data",
+                s8_li3: "Contact us for any inquiry",
+                s9_title: "9. Security",
+                s9_text: "We use encrypted connection (HTTPS) to protect information passing between your browser and the site.",
+                s10_title: "10. Changes",
+                s10_text: "We may update this policy from time to time. Changes are effective immediately upon posting on this page.",
+                s11_title: "11. Contact",
+                s11_text: "If you have any questions, contact us:",
+                back: "← Back to Tool"
             },
             es: {
-                subtitle: "Prueba de fuga VPN",
-                loading: "Verificando...",
-                analyzing: "Analizando tu conexión...",
-                recheck: "🔄 Re-verificar",
-                disclaimer: "⚠️ Los resultados son aproximados. Verifica en otras fuentes.",
-                protect_title: "🛡️ ¿Cómo protegerte?",
-                protect_desc: "Si el resultado no es seguro, sigue estos pasos:",
-                step1: "✅ Usa una VPN confiable",
-                step2: "✅ Desactiva WebRTC en el navegador",
-                step3: "✅ Usa DNS seguro (Cloudflare / NextDNS)",
-                vpn_choose: "🔒 Elige una VPN confiable:",
-                affiliate_note: "* Enlaces de afiliados. Podemos ganar una comisión.",
-                footer: "CHECKMA © 2026 — Herramientas gratuitas de privacidad",
-                privacy_link: "Política de Privacidad",
-                safe_title: "✅ ¡Tu conexión es segura!",
-                safe_desc: "La IP visible es un servidor VPN, no tu IP real.",
-                warning_title: "⚠️ ¡Tu IP real está expuesta!",
-                warning_desc: "La IP visible es tu proveedor",
-                warning_desc2: "Si usas VPN, significa que está filtrando tus datos.",
-                error: "❌ Ocurrió un error. Inténtalo de nuevo.",
-                error_conn: "❌ No se pudo conectar. Verifica tu internet.",
-                error_ip: "Error",
-                error_loc: "No se pudo obtener info",
-                error_net: "Verifica internet"
+                title: "Política de Privacidad",
+                updated: "Última actualización: 13 de octubre de 2026",
+                s1_title: "1. Introducción",
+                s1_text: "Bienvenido a CHECKMA. Respetamos tu privacidad y nos comprometemos a proteger tus datos personales. Esta página explica qué recopilamos, cómo lo usamos y cómo protegemos tu información.",
+                s2_title: "2. Qué Recopilamos",
+                s2_text: "CHECKMA es una herramienta gratuita que muestra información básica sobre tu conexión:",
+                s2_li1: "Dirección IP pública",
+                s2_li2: "Ciudad y país (desde IP)",
+                s2_li3: "Proveedor de servicios de Internet (ISP)",
+                s2_li4: "Información del navegador (User Agent)",
+                s2_important: "⚠️ Importante:",
+                s2_note: "No almacenamos esta información en ninguna base de datos. La información se muestra directamente y se elimina al cerrar la página.",
+                s3_title: "3. Cómo Usamos la Información",
+                s3_text: "Usamos la información solo para:",
+                s3_li1: "Mostrarte el resultado de la prueba",
+                s3_li2: "Ayudarte a verificar si tu VPN funciona correctamente",
+                s3_note: "No usamos la información para ningún otro propósito.",
+                s4_title: "4. Cookies",
+                s4_text: "Solo usamos cookies técnicas necesarias para el funcionamiento de la herramienta. No usamos cookies de seguimiento o publicidad.",
+                s5_title: "5. Terceros",
+                s5_text: "Usamos los siguientes servicios:",
+                s5_li1: "para obtener información de IP",
+                s5_li2: "para alojamiento",
+                s5_note: "Estos servicios tienen sus propias políticas de privacidad.",
+                s6_title: "6. Descargo de Responsabilidad",
+                s6_b1: "Los resultados son aproximados:",
+                s6_t1: "La herramienta proporciona resultados aproximados, no garantizados al 100%.",
+                s6_b2: "Limitación de responsabilidad:",
+                s6_t2: "CHECKMA no es responsable de ninguna decisión tomada por el usuario basada en los resultados.",
+                s6_b3: "Responsabilidad del usuario:",
+                s6_t3: "El usuario es responsable de verificar los resultados de otras fuentes.",
+                s7_title: "7. Enlaces de Afiliados",
+                s7_text: "La herramienta puede contener enlaces de afiliados para servicios VPN. Si el usuario compra a través de ellos, podemos ganar una comisión. Esto no afecta nuestra opinión sobre los servicios.",
+                s8_title: "8. Derechos del Usuario",
+                s8_text: "Tienes derecho a:",
+                s8_li1: "Saber qué recopilamos",
+                s8_li2: "Solicitar la eliminación de tus datos",
+                s8_li3: "Contactarnos para cualquier consulta",
+                s9_title: "9. Seguridad",
+                s9_text: "Usamos conexión cifrada (HTTPS) para proteger la información que pasa entre tu navegador y el sitio.",
+                s10_title: "10. Cambios",
+                s10_text: "Podemos actualizar esta política de vez en cuando. Los cambios son efectivos inmediatamente después de su publicación.",
+                s11_title: "11. Contacto",
+                s11_text: "Si tienes alguna pregunta, contáctanos:",
+                back: "← Volver a la Herramienta"
             },
             fr: {
-                subtitle: "Test de fuite VPN",
-                loading: "Vérification...",
-                analyzing: "Analyse de votre connexion...",
-                recheck: "🔄 Re-vérifier",
-                disclaimer: "⚠️ Les résultats sont approximatifs. Vérifiez ailleurs.",
-                protect_title: "🛡️ Comment vous protéger ?",
-                protect_desc: "Si le résultat n'est pas sûr, suivez ces étapes :",
-                step1: "✅ Utilisez un VPN fiable",
-                step2: "✅ Désactivez WebRTC dans le navigateur",
-                step3: "✅ Utilisez un DNS sécurisé (Cloudflare / NextDNS)",
-                vpn_choose: "🔒 Choisissez un VPN fiable :",
-                affiliate_note: "* Liens affiliés. Nous pouvons percevoir une commission.",
-                footer: "CHECKMA © 2026 — Outils gratuits de confidentialité",
-                privacy_link: "Politique de Confidentialité",
-                safe_title: "✅ Votre connexion est sûre !",
-                safe_desc: "L'IP visible est un serveur VPN, pas votre IP réelle.",
-                warning_title: "⚠️ Votre IP réelle est exposée !",
-                warning_desc: "L'IP visible est votre fournisseur",
-                warning_desc2: "Si vous utilisez un VPN, il fuit vos données.",
-                error: "❌ Une erreur est survenue. Réessayez.",
-                error_conn: "❌ Impossible de se connecter. Vérifiez internet.",
-                error_ip: "Erreur",
-                error_loc: "Impossible d'obtenir les infos",
-                error_net: "Vérifiez internet"
+                title: "Politique de Confidentialité",
+                updated: "Dernière mise à jour : 13 octobre 2026",
+                s1_title: "1. Introduction",
+                s1_text: "Bienvenue sur CHECKMA. Nous respectons votre vie privée et nous nous engageons à protéger vos données personnelles. Cette page explique ce que nous collectons, comment nous l'utilisons et comment nous protégeons vos informations.",
+                s2_title: "2. Ce que nous collectons",
+                s2_text: "CHECKMA est un outil gratuit qui affiche des informations de base sur votre connexion :",
+                s2_li1: "Adresse IP publique",
+                s2_li2: "Ville et pays (depuis IP)",
+                s2_li3: "Fournisseur d'accès Internet (FAI)",
+                s2_li4: "Informations du navigateur (User Agent)",
+                s2_important: "⚠️ Important :",
+                s2_note: "Nous ne stockons pas ces informations dans une base de données. Les informations vous sont affichées directement et supprimées à la fermeture de la page.",
+                s3_title: "3. Comment nous utilisons les informations",
+                s3_text: "Nous utilisons les informations uniquement pour :",
+                s3_li1: "Vous afficher le résultat du test",
+                s3_li2: "Vous aider à vérifier si votre VPN fonctionne correctement",
+                s3_note: "Nous n'utilisons pas les informations à d'autres fins.",
+                s4_title: "4. Cookies",
+                s4_text: "Nous utilisons uniquement des cookies techniques nécessaires au fonctionnement de l'outil. Nous n'utilisons pas de cookies de suivi ou publicitaires.",
+                s5_title: "5. Tiers",
+                s5_text: "Nous utilisons les services suivants :",
+                s5_li1: "pour obtenir des informations IP",
+                s5_li2: "pour l'hébergement",
+                s5_note: "Ces services ont leurs propres politiques de confidentialité.",
+                s6_title: "6. Avis de non-responsabilité",
+                s6_b1: "Les résultats sont approximatifs :",
+                s6_t1: "L'outil fournit des résultats approximatifs, non garantis à 100%.",
+                s6_b2: "Limitation de responsabilité :",
+                s6_t2: "CHECKMA n'est pas responsable des décisions prises par l'utilisateur sur la base des résultats.",
+                s6_b3: "Responsabilité de l'utilisateur :",
+                s6_t3: "L'utilisateur est responsable de vérifier les résultats auprès d'autres sources.",
+                s7_title: "7. Liens d'affiliation",
+                s7_text: "L'outil peut contenir des liens d'affiliation pour les services VPN. Si l'utilisateur achète via ces liens, nous pouvons percevoir une commission. Cela n'affecte pas notre opinion sur les services.",
+                s8_title: "8. Droits de l'utilisateur",
+                s8_text: "Vous avez le droit de :",
+                s8_li1: "Savoir ce que nous collectons",
+                s8_li2: "Demander la suppression de vos données",
+                s8_li3: "Nous contacter pour toute question",
+                s9_title: "9. Sécurité",
+                s9_text: "Nous utilisons une connexion chiffrée (HTTPS) pour protéger les informations entre votre navigateur et le site.",
+                s10_title: "10. Modifications",
+                s10_text: "Nous pouvons mettre à jour cette politique de temps à autre. Les modifications sont effectives immédiatement après leur publication.",
+                s11_title: "11. Contact",
+                s11_text: "Si vous avez des questions, contactez-nous :",
+                back: "← Retour à l'Outil"
             }
         };
 
@@ -358,65 +408,9 @@
             ['ar', 'en', 'es', 'fr'].forEach(l => {
                 document.getElementById('btn-' + l).classList.toggle('active', l === lang);
             });
-
-            checkIP();
-        }
-
-        async function checkIP() {
-            const status = document.getElementById('status');
-            const ipEl = document.getElementById('ip');
-            const locEl = document.getElementById('location');
-            const expEl = document.getElementById('explanation');
-            const t = translations[currentLang];
-
-            status.className = 'status';
-            status.innerText = '⏳';
-            ipEl.innerText = t.loading;
-            locEl.innerText = '...';
-            expEl.innerText = t.analyzing;
-
-            try {
-                const response = await fetch('https://ipwho.is/');
-                const data = await response.json();
-
-                if (data.success) {
-                    ipEl.innerText = data.ip;
-                    locEl.innerText = data.city + ' - ' + data.country + ' | ' + 
-                        (data.connection ? data.connection.isp : '');
-
-                    const vpnKeywords = ['vpn', 'hosting', 'datacenter', 'cloud', 'server', 'proxy'];
-                    const isp = (data.connection && data.connection.isp ? data.connection.isp : '').toLowerCase();
-                    const isVPN = vpnKeywords.some(k => isp.includes(k));
-
-                    if (isVPN) {
-                        status.className = 'status safe';
-                        status.innerText = '✓';
-                        expEl.innerHTML = '<b>' + t.safe_title + '</b><br>' + t.safe_desc;
-                    } else {
-                        status.className = 'status warning';
-                        status.innerText = '!';
-                        expEl.innerHTML = '<b>' + t.warning_title + '</b><br>' + 
-                            t.warning_desc + ' (<b>' + (data.connection ? data.connection.isp : '') + '</b>).<br><br>' + 
-                            t.warning_desc2;
-                    }
-                } else {
-                    status.className = 'status danger';
-                    status.innerText = '✕';
-                    ipEl.innerText = t.error_ip;
-                    locEl.innerText = t.error_loc;
-                    expEl.innerText = t.error;
-                }
-            } catch (error) {
-                const t2 = translations[currentLang];
-                status.className = 'status danger';
-                status.innerText = '✕';
-                ipEl.innerText = t2.error_ip;
-                locEl.innerText = t2.error_net;
-                expEl.innerText = t2.error_conn;
-            }
         }
 
         setLang(currentLang);
     </script>
 </body>
-            </html>
+</html>
