@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
@@ -129,6 +128,20 @@
             margin-top: 30px;
             padding-bottom: 20px;
         }
+        .footer a {
+            color: #00D9FF;
+            text-decoration: none;
+            margin: 0 8px;
+        }
+        .footer a:hover {
+            text-decoration: underline;
+        }
+        .disclaimer {
+            color: #666;
+            font-size: 11px;
+            margin-top: 15px;
+            font-style: italic;
+        }
     </style>
 </head>
 <body>
@@ -142,26 +155,32 @@
         <div class="info" id="location">...</div>
         
         <div class="explanation" id="explanation">
-            جاري تحليل الاتصال ديالك...
+            جاري تحليل الاتصال...
         </div>
         
         <button onclick="checkIP()">🔄 إعادة الفحص</button>
-    </div>
-
-    <div class="next-steps">
-        <h2>🛡️ كيفاش تحمي راسك؟</h2>
-        <p>إلا كانت النتيجة ديالك ماشي آمنة، ها 3 خطوات:</p>
-        <ul>
-            <li>✅ استعمل VPN موثوق</li>
-            <li>✅ عطّل WebRTC ف المتصفح</li>
-            <li>✅ استعمل DNS آمن (Cloudflare / NextDNS)</li>
-        </ul>
-        <p style="margin-top: 15px;">
-            🔗 <a href="#" target="_blank">توصياتنا للـ VPN</a>
+        
+        <p class="disclaimer">
+            ⚠️ النتائج تقريبية. تحقق من مصادر أخرى.
         </p>
     </div>
 
-    <p class="footer">CHECKMA © 2026 — Free Privacy Tools</p>
+    <div class="next-steps">
+        <h2>🛡️ كيف تحمي نفسك؟</h2>
+        <p>إذا كانت النتيجة غير آمنة، اتبع هذه الخطوات:</p>
+        <ul>
+            <li>✅ استخدم VPN موثوق</li>
+            <li>✅ عطّل WebRTC في المتصفح</li>
+            <li>✅ استخدم DNS آمن (Cloudflare / NextDNS)</li>
+        </ul>
+    </div>
+
+    <p class="footer">
+        CHECKMA © 2026 — Free Privacy Tools
+        <br><br>
+        <a href="privacy.html">سياسة الخصوصية</a>
+        <a href="privacy.html">Privacy Policy</a>
+    </p>
 
     <script>
         async function checkIP() {
@@ -174,7 +193,7 @@
             status.innerText = '⏳';
             ipEl.innerText = 'جاري الفحص...';
             locEl.innerText = '...';
-            expEl.innerText = 'جاري تحليل الاتصال ديالك...';
+            expEl.innerText = 'جاري تحليل الاتصال...';
 
             try {
                 const response = await fetch('https://ipwho.is/');
@@ -192,25 +211,25 @@
                     if (isVPN) {
                         status.className = 'status safe';
                         status.innerText = '✓';
-                        expEl.innerHTML = '✅ <b>الاتصال ديالك آمن!</b><br>الـ IP اللي كيبان هو ديال سيرفر VPN، ماشي IP الحقيقي ديالك. بياناتك محمية.';
+                        expEl.innerHTML = '✅ <b>اتصالك آمن!</b><br>الـ IP الظاهر هو IP سيرفر VPN، وليس IP الحقيقي. بياناتك محمية.';
                     } else {
                         status.className = 'status warning';
                         status.innerText = '!';
-                        expEl.innerHTML = '⚠️ <b>الـ IP الحقيقي ديالك مكشوف!</b><br>الـ IP اللي كيبان هو ديال مزود الخدمة ديالك (<b>' + (data.connection ? data.connection.isp : '') + '</b>).<br><br>إلا كنت كتستعمل VPN، هادا يعني أنه <b>كيسرّب</b> بياناتك.';
+                        expEl.innerHTML = '⚠️ <b>الـ IP الحقيقي مكشوف!</b><br>الـ IP الظاهر هو IP مزود الخدمة (<b>' + (data.connection ? data.connection.isp : '') + '</b>).<br><br>إذا كنت تستخدم VPN، فهذا يعني أنه <b>يسرّب</b> بياناتك.';
                     }
                 } else {
                     status.className = 'status danger';
                     status.innerText = '✕';
                     ipEl.innerText = 'خطأ';
-                    locEl.innerText = 'ما قدرناش نجيبو المعلومات';
-                    expEl.innerText = '❌ وقع مشكل. حاول مرة أخرى.';
+                    locEl.innerText = 'تعذر جلب المعلومات';
+                    expEl.innerText = '❌ حدث خطأ. حاول مرة أخرى.';
                 }
             } catch (error) {
                 status.className = 'status danger';
                 status.innerText = '✕';
-                ipEl.innerText = 'خطأ ف الاتصال';
+                ipEl.innerText = 'خطأ في الاتصال';
                 locEl.innerText = 'تحقق من الإنترنت';
-                expEl.innerText = '❌ ما قدرناش نوصلو للسيرفر. تحقق من اتصالك بالإنترنت.';
+                expEl.innerText = '❌ تعذر الاتصال بالخادم. تحقق من اتصالك.';
             }
         }
 
