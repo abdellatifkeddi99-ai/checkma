@@ -149,6 +149,7 @@ subtitle:"فحص تسريب VPN",loading:"جاري الفحص...",analyzing:"ج�
 recheck:"🔄 إعادة الفحص",disclaimer:"⚠️ النتائج تقريبية. تحقق من مصادر أخرى.",
   faq_link: "الأسئلة الشائعة",
   click_copy: "👆 اضغط على IP لنسخه", copied: "تم النسخ!",
+  last_check: "آخر فحص:",
 protect_title:"🛡️ كيف تحمي نفسك؟",protect_desc:"إذا كانت النتيجة غير آمنة، اتبع هذه الخطوات:",
  share_btn: "📤 شارك الأداة", share_copied: "✅ تم نسخ الرابط!", 
 step1:"✅ استخدم VPN موثوق",step2:"✅ عطّل WebRTC في المتصفح",step3:"✅ استخدم DNS آمن (Cloudflare / NextDNS)",
@@ -172,6 +173,7 @@ subtitle:"VPN Leak Test",loading:"Checking...",analyzing:"Analyzing your connect
 recheck:"🔄 Re-check",disclaimer:"⚠️ Results are approximate. Verify from other sources.",
   faq_link: "FAQ",
   click_copy: "👆 Click IP to copy", copied: "Copied!",
+  last_check: "Last check:",
  share_btn: "📤 Share Tool", share_copied: "✅ Link copied!", 
 protect_title:"🛡️ How to protect yourself?",protect_desc:"If the result is unsafe, follow these steps:",
 step1:"✅ Use a trusted VPN",step2:"✅ Disable WebRTC in browser",step3:"✅ Use secure DNS (Cloudflare / NextDNS)",
@@ -195,6 +197,7 @@ subtitle:"Prueba de fuga VPN",loading:"Verificando...",analyzing:"Analizando tu 
 recheck:"🔄 Re-verificar",disclaimer:"⚠️ Los resultados son aproximados. Verifica en otras fuentes.",
   faq_link: "FAQ",
   click_copy: "👆 Clic en IP para copiar", copied: "¡Copiado!",
+  last_check: "Última verificación:",
 protect_title:"🛡️ ¿Cómo protegerte?",protect_desc:"Si el resultado no es seguro, sigue estos pasos:",
   share_btn: "📤 Compartir", share_copied: "✅ ¡Enlace copiado!",
 step1:"✅ Usa una VPN confiable",step2:"✅ Desactiva WebRTC en el navegador",step3:"✅ Usa DNS seguro (Cloudflare / NextDNS)",
@@ -219,6 +222,7 @@ subtitle:"Test de fuite VPN",loading:"Vérification...",analyzing:"Analyse de vo
 recheck:"🔄 Re-vérifier",disclaimer:"⚠️ Les résultats sont approximatifs. Vérifiez ailleurs.",
   faq_link: "FAQ",
   click_copy: "👆 Cliquez sur IP pour copier", copied: "Copié !",
+  last_check: "Dernière vérification :",
 protect_title:"🛡️ Comment vous protéger ?",protect_desc:"Si le résultat n'est pas sûr, suivez ces étapes :",
 step1:"✅ Utilisez un VPN fiable",step2:"✅ Désactivez WebRTC dans le navigateur",step3:"✅ Utilisez un DNS sécurisé (Cloudflare / NextDNS)",
 vpn_choose:"🔒 Choisissez un VPN fiable :",affiliate_note:"* Liens affiliés. Nous pouvons percevoir une commission.",
@@ -457,6 +461,7 @@ document.getElementById('summary').style.display = 'none';
 await checkIP();
 await Promise.all([checkWebRTC(), checkDNS(), checkIPv6()]);
 updateSummary();
+  updateLastCheck();
 btn.disabled = false;
 }
 
