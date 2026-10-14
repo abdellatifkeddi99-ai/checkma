@@ -475,6 +475,15 @@ window.addEventListener('load', () => {
 navigator.serviceWorker.register('/service-worker.js').catch(() => {});
 });
 }
+ function copyIP() {
+if (!visibleIP) return;
+const t = translations[currentLang];
+navigator.clipboard.writeText(visibleIP).then(() => {
+alert('✅ ' + visibleIP + ' ' + (t.copied || 'copied!'));
+}).catch(() => {
+prompt('Copy:', visibleIP);
+});
+  }
   setLang(currentLang);
 </script>
 </body>
