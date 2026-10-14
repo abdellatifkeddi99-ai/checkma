@@ -3,45 +3,61 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="google-site-verification" content="mEJ2O7WqSeZDtD18A_e1E9rf_ZPXH8qB0IIMF0ylloI" />
+<meta name="google-site-verification" content="mEJ2O7WqSeZDtD18A_e1E9rf_ZPXH8qB0IIMF0ylloI" />
 <title>CHECKMA - VPN Leak Test</title>
 <style>
-*{box-sizing:border-box}
-body{background:#000;color:#fff;font-family:Arial,sans-serif;text-align:center;padding:60px 20px 20px 20px;margin:0;min-height:100vh}
-.lang-switch{position:fixed;top:10px;left:10px;z-index:100;display:flex;gap:5px;background:#111;padding:5px;border-radius:8px;border:1px solid #333}
-.lang-switch button{background:transparent;color:#888;border:none;padding:6px 10px;border-radius:5px;font-size:12px;font-weight:bold;cursor:pointer;width:auto;margin:0}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#000;color:#fff;font-family:Arial,sans-serif;text-align:center;padding:60px 16px 20px;min-height:100vh}
+.lang-switch{position:fixed;top:10px;left:10px;z-index:100;display:flex;gap:4px;background:#111;padding:4px;border-radius:8px;border:1px solid #333}
+.lang-switch button{background:transparent;color:#888;border:none;padding:6px 10px;border-radius:5px;font-size:12px;font-weight:bold;cursor:pointer}
 .lang-switch button.active{background:#00D9FF;color:#000}
-h1{color:#00D9FF;font-size:26px;margin-bottom:5px}
-.subtitle{color:#888;font-size:14px;margin-bottom:20px}
-.box{background:#111;border-radius:12px;padding:25px 20px;margin:20px auto;max-width:420px}
-.status{width:70px;height:70px;border-radius:50%;margin:0 auto 15px;display:flex;align-items:center;justify-content:center;font-size:36px;background:#333;transition:all .3s ease}
+h1{color:#00D9FF;font-size:28px;margin-bottom:4px;letter-spacing:1px}
+.subtitle{color:#888;font-size:13px;margin-bottom:24px}
+.box{background:#111;border-radius:14px;padding:28px 20px;margin:20px auto;max-width:440px;border:1px solid #1a1a1a}
+.status{width:72px;height:72px;border-radius:50%;margin:0 auto 16px;display:flex;align-items:center;justify-content:center;font-size:36px;background:#333;transition:all .3s ease}
 .status.safe{background:#00C853}
 .status.warning{background:#FFC107;color:#000}
 .status.danger{background:#FF1744}
-.ip{font-size:24px;font-weight:bold;color:#00D9FF;margin:15px 0;word-break:break-all}
-.info{color:#888;font-size:14px}
-.explanation{background:#1a1a1a;border-radius:8px;padding:15px;margin:15px 0;font-size:14px;color:#ccc;text-align:start;line-height:1.7;border-inline-start:3px solid #00D9FF}
-button.check-btn{background:#fff;color:#000;border:none;padding:15px 30px;border-radius:8px;font-size:16px;font-weight:bold;width:100%;margin:10px 0;cursor:pointer}
-button.check-btn:active{background:#00D9FF;transform:scale(.98)}
-.next-steps{background:#111;border-radius:12px;padding:20px;margin:20px auto;max-width:420px;text-align:start;border-top:3px solid #00D9FF}
-.next-steps h2{color:#00D9FF;font-size:18px;margin-top:0}
-.next-steps p{color:#ccc;font-size:14px;line-height:1.7}
-.next-steps ul{padding-inline-start:20px;color:#ccc;font-size:14px;line-height:1.9}
-.vpn-box{margin-top:20px;padding:15px;background:#1a1a1a;border-radius:8px;text-align:center}
-.vpn-box p.vpn-title{color:#00D9FF;font-weight:bold;margin-bottom:15px}
-.vpn-box a{display:inline-block;padding:10px 20px;border-radius:6px;text-decoration:none;font-weight:bold;margin:5px}
+.ip{font-size:26px;font-weight:bold;color:#00D9FF;margin:12px 0;word-break:break-all;font-family:monospace}
+.info{color:#888;font-size:13px;margin-bottom:12px}
+.explanation{background:#1a1a1a;border-radius:8px;padding:14px;margin:14px 0;font-size:13px;color:#ccc;text-align:start;line-height:1.7;border-inline-start:3px solid #00D9FF}
+.section{background:#1a1a1a;border-radius:8px;padding:14px;margin:12px 0;text-align:start}
+.section h3{color:#00D9FF;font-size:14px;margin-bottom:10px;display:flex;align-items:center;gap:8px}
+.section.webrtc h3{color:#FFC107}
+.section.dns h3{color:#00D9FF}
+.section.ipv6 h3{color:#8E44AD}
+.leak-row{display:flex;align-items:flex-start;gap:10px;font-size:13px;color:#ccc;line-height:1.6}
+.leak-icon{display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;border-radius:50%;font-size:13px;background:#333;flex-shrink:0;margin-top:2px}
+.leak-icon.safe{background:#00C853}
+.leak-icon.warning{background:#FFC107;color:#000}
+.leak-icon.danger{background:#FF1744}
+button.check-btn{background:#00D9FF;color:#000;border:none;padding:15px 30px;border-radius:8px;font-size:16px;font-weight:bold;width:100%;margin:16px 0 8px;cursor:pointer;transition:all .2s}
+button.check-btn:active{transform:scale(.98);background:#00B8D9}
+button.check-btn:disabled{background:#333;color:#666;cursor:not-allowed}
+.next-steps{background:#111;border-radius:14px;padding:20px;margin:20px auto;max-width:440px;text-align:start;border-top:3px solid #00D9FF}
+.next-steps h2{color:#00D9FF;font-size:17px;margin-bottom:10px}
+.next-steps p{color:#ccc;font-size:13px;line-height:1.7;margin-bottom:10px}
+.next-steps ul{padding-inline-start:20px;color:#ccc;font-size:13px;line-height:1.9;list-style:none}
+.next-steps ul li{margin-bottom:4px}
+.vpn-box{margin-top:16px;padding:14px;background:#1a1a1a;border-radius:8px;text-align:center}
+.vpn-box p.vpn-title{color:#00D9FF;font-weight:bold;margin-bottom:12px;font-size:14px}
+.vpn-box a{display:inline-block;padding:10px 22px;border-radius:6px;text-decoration:none;font-weight:bold;margin:4px;font-size:14px;transition:transform .2s}
+.vpn-box a:active{transform:scale(.95)}
 .vpn-nord{background:#00D9FF;color:#000}
 .vpn-surf{background:#fff;color:#000}
-.vpn-note{color:#666;font-size:11px;margin-top:15px}
-.footer{color:#555;font-size:12px;margin-top:30px;padding-bottom:20px}
-.footer a{color:#00D9FF;text-decoration:none;margin:0 8px}
-.disclaimer{color:#666;font-size:11px;margin-top:15px;font-style:italic}
+.vpn-note{color:#666;font-size:10px;margin-top:12px;font-style:italic}
+.footer{color:#555;font-size:11px;margin-top:28px;padding-bottom:20px}
+.footer a{color:#00D9FF;text-decoration:none;margin:0 6px}
+.disclaimer{color:#666;font-size:10px;margin-top:12px;font-style:italic;line-height:1.5}
+.summary-badge{display:inline-block;padding:4px 12px;border-radius:20px;font-size:11px;font-weight:bold;margin-bottom:12px}
+.summary-badge.safe{background:#00C853;color:#000}
+.summary-badge.warning{background:#FFC107;color:#000}
+.summary-badge.danger{background:#FF1744;color:#fff}
 </style>
 </head>
 <body>
 <div class="lang-switch">
 <button onclick="setLang('ar')" id="btn-ar">ع</button>
-  
 <button onclick="setLang('en')" id="btn-en">EN</button>
 <button onclick="setLang('es')" id="btn-es">ES</button>
 <button onclick="setLang('fr')" id="btn-fr">FR</button>
@@ -50,11 +66,38 @@ button.check-btn:active{background:#00D9FF;transform:scale(.98)}
 <div class="box">
 <h1>CHECKMA</h1>
 <p class="subtitle" data-i18n="subtitle">فحص تسريب VPN</p>
+<span class="summary-badge" id="summary" style="display:none"></span>
+
 <div class="status" id="status">⏳</div>
 <div class="ip" id="ip" data-i18n="loading">جاري الفحص...</div>
 <div class="info" id="location">...</div>
 <div class="explanation" id="explanation" data-i18n="analyzing">جاري تحليل الاتصال...</div>
-<button class="check-btn" onclick="checkIP()" data-i18n="recheck">🔄 إعادة الفحص</button>
+
+<div class="section webrtc">
+<h3>🔍 <span data-i18n="webrtc_title">فحص تسريب WebRTC</span></h3>
+<div class="leak-row">
+<span class="leak-icon" id="webrtc-icon">⏳</span>
+<span id="webrtc-result" data-i18n="checking">جاري الفحص...</span>
+</div>
+</div>
+
+<div class="section dns">
+<h3>📡 <span data-i18n="dns_title">فحص تسريب DNS</span></h3>
+<div class="leak-row">
+<span class="leak-icon" id="dns-icon">⏳</span>
+<span id="dns-result" data-i18n="checking">جاري الفحص...</span>
+</div>
+</div>
+
+<div class="section ipv6">
+<h3>🌐 <span data-i18n="ipv6_title">فحص IPv6</span></h3>
+<div class="leak-row">
+<span class="leak-icon" id="ipv6-icon">⏳</span>
+<span id="ipv6-result" data-i18n="checking">جاري الفحص...</span>
+</div>
+</div>
+
+<button class="check-btn" id="checkBtn" onclick="checkAll()" data-i18n="recheck">🔄 إعادة الفحص</button>
 <p class="disclaimer" data-i18n="disclaimer">⚠️ النتائج تقريبية. تحقق من مصادر أخرى.</p>
 </div>
 
@@ -68,8 +111,8 @@ button.check-btn:active{background:#00D9FF;transform:scale(.98)}
 </ul>
 <div class="vpn-box">
 <p class="vpn-title" data-i18n="vpn_choose">🔒 اختر VPN موثوق:</p>
-<a href="https://nordvpn.com" target="_blank" class="vpn-nord">NordVPN</a>
-<a href="https://surfshark.com" target="_blank" class="vpn-surf">Surfshark</a>
+<a href="https://nordvpn.com" target="_blank" rel="noopener" class="vpn-nord">NordVPN</a>
+<a href="https://surfshark.com" target="_blank" rel="noopener" class="vpn-surf">Surfshark</a>
 <p class="vpn-note" data-i18n="affiliate_note">* روابط تابعة. قد نحصل على عمولة عند الشراء.</p>
 </div>
 </div>
@@ -83,112 +126,92 @@ button.check-btn:active{background:#00D9FF;transform:scale(.98)}
 <script>
 const translations = {
 ar: {
-subtitle: "فحص تسريب VPN",
-loading: "جاري الفحص...",
-analyzing: "جاري تحليل الاتصال...",
-recheck: "🔄 إعادة الفحص",
-disclaimer: "⚠️ النتائج تقريبية. تحقق من مصادر أخرى.",
-protect_title: "🛡️ كيف تحمي نفسك؟",
-protect_desc: "إذا كانت النتيجة غير آمنة، اتبع هذه الخطوات:",
-step1: "✅ استخدم VPN موثوق",
-step2: "✅ عطّل WebRTC في المتصفح",
-step3: "✅ استخدم DNS آمن (Cloudflare / NextDNS)",
-vpn_choose: "🔒 اختر VPN موثوق:",
-affiliate_note: "* روابط تابعة. قد نحصل على عمولة عند الشراء.",
-footer: "CHECKMA © 2026 — أدوات مجانية للخصوصية",
-privacy_link: "سياسة الخصوصية",
-safe_title: "✅ اتصالك آمن!",
-safe_desc: "الـ IP الظاهر هو IP سيرفر VPN، وليس IP الحقيقي.",
-warning_title: "⚠️ الـ IP الحقيقي مكشوف!",
-warning_desc: "الـ IP الظاهر هو IP مزود الخدمة",
-warning_desc2: "إذا كنت تستخدم VPN، فهذا يعني أنه يسرّب بياناتك.",
-error: "❌ حدث خطأ. حاول مرة أخرى.",
-error_conn: "❌ تعذر الاتصال. تحقق من اتصالك.",
-error_ip: "خطأ",
-error_loc: "تعذر جلب المعلومات",
-error_net: "تحقق من الإنترنت"
+subtitle:"فحص تسريب VPN",loading:"جاري الفحص...",analyzing:"جاري تحليل الاتصال...",
+recheck:"🔄 إعادة الفحص",disclaimer:"⚠️ النتائج تقريبية. تحقق من مصادر أخرى.",
+protect_title:"🛡️ كيف تحمي نفسك؟",protect_desc:"إذا كانت النتيجة غير آمنة، اتبع هذه الخطوات:",
+step1:"✅ استخدم VPN موثوق",step2:"✅ عطّل WebRTC في المتصفح",step3:"✅ استخدم DNS آمن (Cloudflare / NextDNS)",
+vpn_choose:"🔒 اختر VPN موثوق:",affiliate_note:"* روابط تابعة. قد نحصل على عمولة عند الشراء.",
+footer:"CHECKMA © 2026 — أدوات مجانية للخصوصية",privacy_link:"سياسة الخصوصية",
+safe_title:"✅ اتصالك آمن!",safe_desc:"الـ IP الظاهر هو IP سيرفر VPN، وليس IP الحقيقي.",
+warning_title:"⚠️ الـ IP الحقيقي مكشوف!",warning_desc:"الـ IP الظاهر هو IP مزود الخدمة",
+warning_desc2:"إذا كنت تستخدم VPN، فهذا يعني أنه يسرّب بياناتك.",
+error:"❌ حدث خطأ. حاول مرة أخرى.",error_conn:"❌ تعذر الاتصال.",error_ip:"خطأ",error_loc:"تعذر جلب المعلومات",error_net:"تحقق من الإنترنت",
+webrtc_title:"فحص تسريب WebRTC",dns_title:"فحص تسريب DNS",ipv6_title:"فحص IPv6",
+checking:"جاري الفحص...",checking_wait:"يرجى الانتظار...",
+webrtc_safe:"✅ لا يوجد تسريب. WebRTC لا يكشف IP الحقيقي.",
+webrtc_leak:"🚨 تسريب! IP حقيقي مكشوف",webrtc_error:"⚠️ تعذر الفحص.",
+dns_safe:"✅ لا يوجد تسريب DNS.",dns_leak:"🚨 تسريب DNS! السيرفر كيشوف استعلاماتك.",dns_error:"⚠️ تعذر الفحص.",
+ipv6_safe:"✅ IPv6 غير مفعّل. آمن.",ipv6_warning:"⚠️ IPv6 مفعّل. يمكن يكشف IP الحقيقي.",
+ipv6_error:"⚠️ تعذر الفحص.",
+summary_safe:"آمن",summary_warning:"تحذير",summary_danger:"خطر"
 },
 en: {
-subtitle: "VPN Leak Test",
-loading: "Checking...",
-analyzing: "Analyzing your connection...",
-recheck: "🔄 Re-check",
-disclaimer: "⚠️ Results are approximate. Verify from other sources.",
-protect_title: "🛡️ How to protect yourself?",
-protect_desc: "If the result is unsafe, follow these steps:",
-step1: "✅ Use a trusted VPN",
-step2: "✅ Disable WebRTC in browser",
-step3: "✅ Use secure DNS (Cloudflare / NextDNS)",
-vpn_choose: "🔒 Choose a trusted VPN:",
-affiliate_note: "* Affiliate links. We may earn a commission on purchase.",
-footer: "CHECKMA © 2026 — Free Privacy Tools",
-privacy_link: "Privacy Policy",
-safe_title: "✅ Your connection is safe!",
-safe_desc: "The visible IP is a VPN server, not your real IP.",
-warning_title: "⚠️ Your real IP is exposed!",
-warning_desc: "The visible IP is your ISP",
-warning_desc2: "If you're using a VPN, it means it's leaking your data.",
-error: "❌ Error occurred. Try again.",
-error_conn: "❌ Could not connect. Check your internet.",
-error_ip: "Error",
-error_loc: "Could not fetch info",
-error_net: "Check internet"
+subtitle:"VPN Leak Test",loading:"Checking...",analyzing:"Analyzing your connection...",
+recheck:"🔄 Re-check",disclaimer:"⚠️ Results are approximate. Verify from other sources.",
+protect_title:"🛡️ How to protect yourself?",protect_desc:"If the result is unsafe, follow these steps:",
+step1:"✅ Use a trusted VPN",step2:"✅ Disable WebRTC in browser",step3:"✅ Use secure DNS (Cloudflare / NextDNS)",
+vpn_choose:"🔒 Choose a trusted VPN:",affiliate_note:"* Affiliate links. We may earn a commission.",
+footer:"CHECKMA © 2026 — Free Privacy Tools",privacy_link:"Privacy Policy",
+safe_title:"✅ Your connection is safe!",safe_desc:"The visible IP is a VPN server, not your real IP.",
+warning_title:"⚠️ Your real IP is exposed!",warning_desc:"The visible IP is your ISP",
+warning_desc2:"If you're using a VPN, it's leaking your data.",
+error:"❌ Error occurred. Try again.",error_conn:"❌ Could not connect.",error_ip:"Error",error_loc:"Could not fetch info",error_net:"Check internet",
+webrtc_title:"WebRTC Leak Test",dns_title:"DNS Leak Test",ipv6_title:"IPv6 Test",
+checking:"Checking...",checking_wait:"Please wait...",
+webrtc_safe:"✅ No leak. WebRTC does not expose your real IP.",
+webrtc_leak:"🚨 Leak! Real IP exposed",webrtc_error:"⚠️ Could not test.",
+dns_safe:"✅ No DNS leak.",dns_leak:"🚨 DNS leak! Server sees your queries.",dns_error:"⚠️ Could not test.",
+ipv6_safe:"✅ IPv6 disabled. Safe.",ipv6_warning:"⚠️ IPv6 enabled. May expose your real IP.",
+ipv6_error:"⚠️ Could not test.",
+summary_safe:"Safe",summary_warning:"Warning",summary_danger:"Danger"
 },
 es: {
-subtitle: "Prueba de fuga VPN",
-loading: "Verificando...",
-analyzing: "Analizando tu conexión...",
-recheck: "🔄 Re-verificar",
-disclaimer: "⚠️ Los resultados son aproximados. Verifica en otras fuentes.",
-protect_title: "🛡️ ¿Cómo protegerte?",
-protect_desc: "Si el resultado no es seguro, sigue estos pasos:",
-step1: "✅ Usa una VPN confiable",
-step2: "✅ Desactiva WebRTC en el navegador",
-step3: "✅ Usa DNS seguro (Cloudflare / NextDNS)",
-vpn_choose: "🔒 Elige una VPN confiable:",
-affiliate_note: "* Enlaces de afiliados. Podemos ganar una comisión.",
-footer: "CHECKMA © 2026 — Herramientas gratuitas de privacidad",
-privacy_link: "Política de Privacidad",
-safe_title: "✅ ¡Tu conexión es segura!",
-safe_desc: "La IP visible es un servidor VPN, no tu IP real.",
-warning_title: "⚠️ ¡Tu IP real está expuesta!",
-warning_desc: "La IP visible es tu proveedor",
-warning_desc2: "Si usas VPN, significa que está filtrando tus datos.",
-error: "❌ Ocurrió un error. Inténtalo de nuevo.",
-error_conn: "❌ No se pudo conectar. Verifica tu internet.",
-error_ip: "Error",
-error_loc: "No se pudo obtener info",
-error_net: "Verifica internet"
+subtitle:"Prueba de fuga VPN",loading:"Verificando...",analyzing:"Analizando tu conexión...",
+recheck:"🔄 Re-verificar",disclaimer:"⚠️ Los resultados son aproximados. Verifica en otras fuentes.",
+protect_title:"🛡️ ¿Cómo protegerte?",protect_desc:"Si el resultado no es seguro, sigue estos pasos:",
+step1:"✅ Usa una VPN confiable",step2:"✅ Desactiva WebRTC en el navegador",step3:"✅ Usa DNS seguro (Cloudflare / NextDNS)",
+vpn_choose:"🔒 Elige una VPN confiable:",affiliate_note:"* Enlaces de afiliados. Podemos ganar una comisión.",
+footer:"CHECKMA © 2026 — Herramientas gratuitas de privacidad",privacy_link:"Política de Privacidad",
+safe_title:"✅ ¡Tu conexión es segura!",safe_desc:"La IP visible es un servidor VPN, no tu IP real.",
+warning_title:"⚠️ ¡Tu IP real está expuesta!",warning_desc:"La IP visible es tu proveedor",
+warning_desc2:"Si usas VPN, está filtrando tus datos.",
+error:"❌ Ocurrió un error.",error_conn:"❌ No se pudo conectar.",error_ip:"Error",error_loc:"No se pudo obtener info",error_net:"Verifica internet",
+webrtc_title:"Prueba WebRTC",dns_title:"Prueba DNS",ipv6_title:"Prueba IPv6",
+checking:"Verificando...",checking_wait:"Por favor espera...",
+webrtc_safe:"✅ Sin fuga. WebRTC no expone tu IP real.",
+webrtc_leak:"🚨 ¡Fuga! IP real expuesta",webrtc_error:"⚠️ No se pudo probar.",
+dns_safe:"✅ Sin fuga DNS.",dns_leak:"🚨 ¡Fuga DNS! El servidor ve tus consultas.",dns_error:"⚠️ No se pudo probar.",
+ipv6_safe:"✅ IPv6 desactivado. Seguro.",ipv6_warning:"⚠️ IPv6 activado. Puede exponer tu IP.",
+ipv6_error:"⚠️ No se pudo probar.",
+summary_safe:"Seguro",summary_warning:"Advertencia",summary_danger:"Peligro"
 },
 fr: {
-subtitle: "Test de fuite VPN",
-loading: "Vérification...",
-analyzing: "Analyse de votre connexion...",
-recheck: "🔄 Re-vérifier",
-disclaimer: "⚠️ Les résultats sont approximatifs. Vérifiez ailleurs.",
-protect_title: "🛡️ Comment vous protéger ?",
-protect_desc: "Si le résultat n'est pas sûr, suivez ces étapes :",
-step1: "✅ Utilisez un VPN fiable",
-step2: "✅ Désactivez WebRTC dans le navigateur",
-step3: "✅ Utilisez un DNS sécurisé (Cloudflare / NextDNS)",
-vpn_choose: "🔒 Choisissez un VPN fiable :",
-affiliate_note: "* Liens affiliés. Nous pouvons percevoir une commission.",
-footer: "CHECKMA © 2026 — Outils gratuits de confidentialité",
-privacy_link: "Politique de Confidentialité",
-safe_title: "✅ Votre connexion est sûre !",
-safe_desc: "L'IP visible est un serveur VPN, pas votre IP réelle.",
-warning_title: "⚠️ Votre IP réelle est exposée !",
-warning_desc: "L'IP visible est votre fournisseur",
-warning_desc2: "Si vous utilisez un VPN, il fuit vos données.",
-error: "❌ Une erreur est survenue. Réessayez.",
-error_conn: "❌ Impossible de se connecter. Vérifiez internet.",
-error_ip: "Erreur",
-error_loc: "Impossible d'obtenir les infos",
-error_net: "Vérifiez internet"
+subtitle:"Test de fuite VPN",loading:"Vérification...",analyzing:"Analyse de votre connexion...",
+recheck:"🔄 Re-vérifier",disclaimer:"⚠️ Les résultats sont approximatifs. Vérifiez ailleurs.",
+protect_title:"🛡️ Comment vous protéger ?",protect_desc:"Si le résultat n'est pas sûr, suivez ces étapes :",
+step1:"✅ Utilisez un VPN fiable",step2:"✅ Désactivez WebRTC dans le navigateur",step3:"✅ Utilisez un DNS sécurisé (Cloudflare / NextDNS)",
+vpn_choose:"🔒 Choisissez un VPN fiable :",affiliate_note:"* Liens affiliés. Nous pouvons percevoir une commission.",
+footer:"CHECKMA © 2026 — Outils gratuits de confidentialité",privacy_link:"Politique de Confidentialité",
+safe_title:"✅ Votre connexion est sûre !",safe_desc:"L'IP visible est un serveur VPN, pas votre IP réelle.",
+warning_title:"⚠️ Votre IP réelle est exposée !",warning_desc:"L'IP visible est votre fournisseur",
+warning_desc2:"Si vous utilisez un VPN, il fuit vos données.",
+error:"❌ Une erreur est survenue.",error_conn:"❌ Impossible de se connecter.",error_ip:"Erreur",error_loc:"Impossible d'obtenir les infos",error_net:"Vérifiez internet",
+webrtc_title:"Test WebRTC",dns_title:"Test DNS",ipv6_title:"Test IPv6",
+checking:"Vérification...",checking_wait:"Veuillez patienter...",
+webrtc_safe:"✅ Pas de fuite. WebRTC n'expose pas votre IP réelle.",
+webrtc_leak:"🚨 Fuite ! IP réelle exposée",webrtc_error:"⚠️ Impossible de tester.",
+dns_safe:"✅ Pas de fuite DNS.",dns_leak:"🚨 Fuite DNS ! Le serveur voit vos requêtes.",dns_error:"⚠️ Impossible de tester.",
+ipv6_safe:"✅ IPv6 désactivé. Sûr.",ipv6_warning:"⚠️ IPv6 activé. Peut exposer votre IP.",
+ipv6_error:"⚠️ Impossible de tester.",
+summary_safe:"Sûr",summary_warning:"Attention",summary_danger:"Danger"
 }
 };
 
 let currentLang = localStorage.getItem('checkma_lang') || 'ar';
+let visibleIP = '';
+let webrtcResult = 'pending';
+let dnsResult = 'pending';
+let ipv6Result = 'pending';
 
 function setLang(lang) {
 currentLang = lang;
@@ -198,15 +221,133 @@ html.lang = lang;
 html.dir = (lang === 'ar') ? 'rtl' : 'ltr';
 document.querySelectorAll('[data-i18n]').forEach(el => {
 const key = el.getAttribute('data-i18n');
-if (translations[lang][key]) {
-el.textContent = translations[lang][key];
-}
+if (translations[lang][key]) el.textContent = translations[lang][key];
 });
 ['ar','en','es','fr'].forEach(l => {
 const btn = document.getElementById('btn-' + l);
 if (btn) btn.classList.toggle('active', l === lang);
 });
-checkIP();
+checkAll();
+}
+
+function isPrivateIP(ip) {
+return /^(10\.|192\.168\.|172\.(1[6-9]|2[0-9]|3[01])\.|127\.|169\.254\.|::1|fe80:)/.test(ip);
+}
+
+function getWebRTCIPs() {
+return new Promise((resolve) => {
+const ips = new Set();
+let pc;
+try {
+pc = new RTCPeerConnection({ iceServers: [{ urls: 'stun:stun.l.google.com:19302' }] });
+} catch (e) { resolve([]); return; }
+try { pc.createDataChannel(''); } catch (e) {}
+pc.onicecandidate = (ice) => {
+if (!ice.candidate) {
+try { pc.close(); } catch (e) {}
+resolve([...ips]); return;
+}
+const c = ice.candidate.candidate;
+const ipv4 = c.match(/([0-9]{1,3}(\.[0-9]{1,3}){3})/);
+const ipv6 = c.match(/([a-f0-9]{1,4}(:[a-f0-9]{1,4}){2,7})/);
+if (ipv4) ips.add(ipv4[1]);
+if (ipv6 && !ipv6[1].startsWith('fe80')) ips.add(ipv6[1]);
+};
+pc.createOffer().then(o => pc.setLocalDescription(o)).catch(() => { try { pc.close(); } catch (e) {} resolve([]); });
+setTimeout(() => { try { pc.close(); } catch (e) {} resolve([...ips]); }, 4000);
+});
+}
+
+async function checkWebRTC() {
+const icon = document.getElementById('webrtc-icon');
+const result = document.getElementById('webrtc-result');
+const t = translations[currentLang];
+icon.className = 'leak-icon'; icon.textContent = '⏳';
+result.textContent = t.checking;
+try {
+const ips = await getWebRTCIPs();
+const pub = ips.filter(ip => !isPrivateIP(ip));
+if (pub.length === 0) {
+webrtcResult = 'safe';
+icon.className = 'leak-icon safe'; icon.textContent = '✓';
+result.textContent = t.webrtc_safe;
+} else {
+const leaks = pub.filter(ip => ip !== visibleIP);
+if (leaks.length > 0) {
+webrtcResult = 'danger';
+icon.className = 'leak-icon danger'; icon.textContent = '✕';
+result.innerHTML = t.webrtc_leak + ': <b>' + leaks.join(', ') + '</b>';
+} else {
+webrtcResult = 'safe';
+icon.className = 'leak-icon safe'; icon.textContent = '✓';
+result.textContent = t.webrtc_safe;
+}
+}
+} catch (e) {
+webrtcResult = 'warning';
+icon.className = 'leak-icon warning'; icon.textContent = '!';
+result.textContent = t.webrtc_error;
+}
+}
+
+async function checkDNS() {
+const icon = document.getElementById('dns-icon');
+const result = document.getElementById('dns-result');
+const t = translations[currentLang];
+icon.className = 'leak-icon'; icon.textContent = '⏳';
+result.textContent = t.checking;
+try {
+const r = await fetch('https://1.1.1.1/cdn-cgi/trace', { cache: 'no-store' });
+const text = await r.text();
+const lines = text.split('\n');
+const data = {};
+lines.forEach(l => { const [k,v] = l.split('='); if (k) data[k] = v; });
+if (data.ip) {
+const isCloudflareDNS = data.warp === 'on' || data.gateway === 'on';
+if (isCloudflareDNS || data.ip === visibleIP) {
+dnsResult = 'safe';
+icon.className = 'leak-icon safe'; icon.textContent = '✓';
+result.textContent = t.dns_safe;
+} else {
+dnsResult = 'warning';
+icon.className = 'leak-icon warning'; icon.textContent = '!';
+result.textContent = t.dns_leak;
+}
+} else {
+dnsResult = 'warning';
+icon.className = 'leak-icon warning'; icon.textContent = '!';
+result.textContent = t.dns_error;
+}
+} catch (e) {
+dnsResult = 'warning';
+icon.className = 'leak-icon warning'; icon.textContent = '!';
+result.textContent = t.dns_error;
+}
+}
+
+async function checkIPv6() {
+const icon = document.getElementById('ipv6-icon');
+const result = document.getElementById('ipv6-result');
+const t = translations[currentLang];
+icon.className = 'leak-icon'; icon.textContent = '⏳';
+result.textContent = t.checking;
+try {
+const r = await fetch('https://api64.ipify.org?format=json', { cache: 'no-store' });
+const data = await r.json();
+if (data.ip && data.ip.includes(':')) {
+ipv6Result = 'warning';
+icon.className = 'leak-icon warning'; icon.textContent = '!';
+result.textContent = t.ipv6_warning;
+} else {
+ipv6Result = 'safe';
+icon.className = 'leak-icon safe'; icon.textContent = '✓';
+result.textContent = t.ipv6_safe;
+}
+} catch (e) {
+ipv6Result = 'safe';
+icon.className = 'leak-icon safe'; icon.textContent = '✓';
+result.textContent = t.ipv6_safe;
+}
 }
 
 async function checkIP() {
@@ -215,48 +356,77 @@ const ipEl = document.getElementById('ip');
 const locEl = document.getElementById('location');
 const expEl = document.getElementById('explanation');
 const t = translations[currentLang];
+status.className = 'status'; status.textContent = '⏳';
+ipEl.textContent = t.loading; locEl.textContent = '...'; expEl.textContent = t.analyzing;
 
-status.className = 'status';
-status.innerText = '⏳';
-ipEl.innerText = t.loading;
-locEl.innerText = '...';
-expEl.innerText = t.analyzing;
-
+let data = null;
 try {
-const response = await fetch('https://ipwho.is/');
-const data = await response.json();
+const r = await fetch('https://ipwho.is/');
+const d = await r.json();
+if (d.success) data = d;
+} catch (e) {}
 
-if (data.success) {
-ipEl.innerText = data.ip;
-locEl.innerText = data.city + ' - ' + data.country + ' | ' + (data.connection ? data.connection.isp : '');
-const vpnKeywords = ['vpn','hosting','datacenter','cloud','server','proxy'];
+if (!data) {
+try {
+const r = await fetch('https://ipapi.co/json/');
+const d = await r.json();
+if (d.ip) {
+data = {
+success: true, ip: d.ip, city: d.city, country: d.country_name,
+connection: { isp: d.org || '' }
+};
+}
+} catch (e) {}
+}
+
+if (data) {
+visibleIP = data.ip;
+ipEl.textContent = data.ip;
+locEl.textContent = data.city + ' - ' + data.country + ' | ' + (data.connection ? data.connection.isp : '');
+const kws = ['vpn','hosting','datacenter','cloud','server','proxy'];
 const isp = (data.connection && data.connection.isp ? data.connection.isp : '').toLowerCase();
-const isVPN = vpnKeywords.some(k => isp.includes(k));
-
+const isVPN = kws.some(k => isp.includes(k));
 if (isVPN) {
-status.className = 'status safe';
-status.innerText = '✓';
+status.className = 'status safe'; status.textContent = '✓';
 expEl.innerHTML = '<b>' + t.safe_title + '</b><br>' + t.safe_desc;
 } else {
-status.className = 'status warning';
-status.innerText = '!';
+status.className = 'status warning'; status.textContent = '!';
 expEl.innerHTML = '<b>' + t.warning_title + '</b><br>' + t.warning_desc + ' (<b>' + (data.connection ? data.connection.isp : '') + '</b>).<br><br>' + t.warning_desc2;
 }
 } else {
-status.className = 'status danger';
-status.innerText = '✕';
-ipEl.innerText = t.error_ip;
-locEl.innerText = t.error_loc;
-expEl.innerText = t.error;
+status.className = 'status danger'; status.textContent = '✕';
+ipEl.textContent = t.error_ip; locEl.textContent = t.error_loc; expEl.textContent = t.error_conn;
 }
-} catch (error) {
-const t2 = translations[currentLang];
-status.className = 'status danger';
-status.innerText = '✕';
-ipEl.innerText = t2.error_ip;
-locEl.innerText = t2.error_net;
-expEl.innerText = t2.error_conn;
 }
+
+function updateSummary() {
+const summary = document.getElementById('summary');
+const t = translations[currentLang];
+if (webrtcResult === 'danger' || dnsResult === 'danger') {
+summary.className = 'summary-badge danger';
+summary.textContent = t.summary_danger;
+summary.style.display = 'inline-block';
+} else if (webrtcResult === 'warning' || dnsResult === 'warning' || ipv6Result === 'warning') {
+summary.className = 'summary-badge warning';
+summary.textContent = t.summary_warning;
+summary.style.display = 'inline-block';
+} else if (webrtcResult === 'safe' || dnsResult === 'safe') {
+summary.className = 'summary-badge safe';
+summary.textContent = t.summary_safe;
+summary.style.display = 'inline-block';
+}
+}
+
+async function checkAll() {
+const btn = document.getElementById('checkBtn');
+btn.disabled = true;
+webrtcResult = 'pending'; dnsResult = 'pending'; ipv6Result = 'pending';
+document.getElementById('summary').style.display = 'none';
+
+await checkIP();
+await Promise.all([checkWebRTC(), checkDNS(), checkIPv6()]);
+updateSummary();
+btn.disabled = false;
 }
 
 setLang(currentLang);
