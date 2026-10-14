@@ -1,1 +1,193 @@
 
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" id="htmlRoot">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FAQ - CHECKMA</title>
+<style>
+*{box-sizing:border-box}
+body{background:#000;color:#fff;font-family:Arial,sans-serif;padding:60px 20px 20px 20px;margin:0;line-height:1.8}
+.lang-switch{position:fixed;top:10px;left:10px;z-index:100;display:flex;gap:5px;background:#111;padding:5px;border-radius:8px;border:1px solid #333}
+.lang-switch button{background:transparent;color:#888;border:none;padding:6px 10px;border-radius:5px;font-size:12px;font-weight:bold;cursor:pointer}
+.lang-switch button.active{background:#00D9FF;color:#000}
+.container{max-width:700px;margin:0 auto;background:#111;border-radius:12px;padding:30px 20px}
+h1{color:#00D9FF;font-size:26px;margin-bottom:5px;text-align:center}
+.subtitle{color:#888;font-size:14px;text-align:center;margin-bottom:30px}
+.faq-item{background:#1a1a1a;border-radius:8px;padding:18px;margin:12px 0;border-inline-start:3px solid #00D9FF}
+.faq-q{color:#00D9FF;font-size:15px;font-weight:bold;margin-bottom:10px;display:flex;align-items:flex-start;gap:8px}
+.faq-q::before{content:"❓";flex-shrink:0}
+.faq-a{color:#ccc;font-size:14px;line-height:1.7;padding-inline-start:26px}
+.back{display:inline-block;margin-top:30px;padding:12px 24px;background:#fff;color:#000;border-radius:8px;font-weight:bold;text-decoration:none}
+.back:hover{background:#00D9FF}
+.footer{color:#555;font-size:12px;text-align:center;margin-top:30px}
+hr{border:none;border-top:1px solid #222;margin:30px 0}
+a{color:#00D9FF;text-decoration:none}
+a:hover{text-decoration:underline}
+.vpn-box{margin-top:20px;padding:15px;background:#1a1a1a;border-radius:8px;text-align:center;border-inline-start:3px solid #FFC107}
+.vpn-box p{color:#00D9FF;font-weight:bold;margin-bottom:12px}
+.vpn-box a{display:inline-block;padding:10px 20px;border-radius:6px;text-decoration:none;font-weight:bold;margin:5px}
+.vpn-nord{background:#00D9FF;color:#000}
+.vpn-surf{background:#fff;color:#000}
+</style>
+</head>
+<body>
+<div class="lang-switch">
+<button onclick="setLang('ar')" id="btn-ar">ع</button>
+<button onclick="setLang('en')" id="btn-en">EN</button>
+<button onclick="setLang('es')" id="btn-es">ES</button>
+<button onclick="setLang('fr')" id="btn-fr">FR</button>
+</div>
+
+<div class="container">
+<h1 data-i18n="title">الأسئلة الشائعة</h1>
+<p class="subtitle">FAQ - CHECKMA</p>
+<hr>
+
+<div class="faq-item">
+<div class="faq-q" data-i18n="q1">ما هو CHECKMA؟</div>
+<div class="faq-a" data-i18n="a1">CHECKMA هي أداة مجانية لفحص تسريبات VPN. تتحقق من IP، WebRTC، DNS، و IPv6 للتأكد من أن اتصالك آمن.</div>
+</div>
+
+<div class="faq-item">
+<div class="faq-q" data-i18n="q2">هل الأداة مجانية؟</div>
+<div class="faq-a" data-i18n="a2">نعم، CHECKMA مجانية 100%. لا تحتاج إلى تسجيل أو دفع. قد نحصل على عمولة إذا اشتريت VPN من خلال روابطنا التابعة.</div>
+</div>
+
+<div class="faq-item">
+<div class="faq-q" data-i18n="q3">هل تخزنون بياناتي؟</div>
+<div class="faq-a" data-i18n="a3">لا. لا نخزن أي بيانات في قواعد البيانات. المعلومات تظهر لك مباشرة وتُحذف عند إغلاق الصفحة.</div>
+</div>
+
+<div class="faq-item">
+<div class="faq-q" data-i18n="q4">ما هو تسريب VPN؟</div>
+<div class="faq-a" data-i18n="a4">تسريب VPN هو عندما يكشف VPN الخاص بك بيانات حقيقية (مثل IP الحقيقي) رغم أنه يعمل. يمكن أن يحدث عبر WebRTC، DNS، أو IPv6.</div>
+</div>
+
+<div class="faq-item">
+<div class="faq-q" data-i18n="q5">ما هو تسريب WebRTC؟</div>
+<div class="faq-a" data-i18n="a5">WebRTC هو تقنية تستخدمها المتصفحات للمكالمات. يمكن أن يكشف IP الحقيقي حتى مع VPN نشط. قمنا بفحصه لك.</div>
+</div>
+
+<div class="faq-item">
+<div class="faq-q" data-i18n="q6">ما هو تسريب DNS؟</div>
+<div class="faq-a" data-i18n="a6">عندما تزور موقعاً، يترجم DNS الاسم إلى عنوان IP. إذا كان DNS الخاص بك لا يمر عبر VPN، يمكن لمزود الإنترنت رؤية المواقع التي تزورها.</div>
+</div>
+
+<div class="faq-item">
+<div class="faq-q" data-i18n="q7">ما هو تسريب IPv6؟</div>
+<div class="faq-a" data-i18n="a7">بعض VPNs تدعم IPv4 فقط. إذا كان جهازك يستخدم IPv6، فقد يكشف IP الحقيقي. نتحقق من ذلك لك.</div>
+</div>
+
+<div class="faq-item">
+<div class="faq-q" data-i18n="q8">كيف أحمي نفسي؟</div>
+<div class="faq-a" data-i18n="a8">استخدم VPN موثوقاً، عطّل WebRTC في المتصفح، واستخدم DNS آمن (مثل Cloudflare أو NextDNS).</div>
+</div>
+
+<div class="faq-item">
+<div class="faq-q" data-i18n="q9">ما مدى دقة النتائج؟</div>
+<div class="faq-a" data-i18n="a9">النتائج تقريبية وليست مضمونة بنسبة 100%. نوصي بالتحقق من مصادر أخرى والتأكد من إعداداتك.</div>
+</div>
+
+<div class="faq-item">
+<div class="faq-q" data-i18n="q10">هل الأداة آمنة؟</div>
+<div class="faq-a" data-i18n="a10">نعم، آمنة 100%. نستخدم HTTPS، ولا نخزن أي بيانات، وكل الفحص يتم في متصفحك.</div>
+</div>
+
+<hr>
+
+<div class="vpn-box">
+<p data-i18n="vpn_choose">🔒 اختر VPN موثوق:</p>
+<a href="https://nordvpn.com" target="_blank" rel="noopener" class="vpn-nord">NordVPN</a>
+<a href="https://surfshark.com" target="_blank" rel="noopener" class="vpn-surf">Surfshark</a>
+</div>
+
+<div style="text-align:center">
+<a href="/" class="back" data-i18n="back">← العودة إلى الأداة</a>
+</div>
+
+<p class="footer">CHECKMA © 2026</p>
+</div>
+
+<script>
+const translations = {
+ar: {
+title:"الأسئلة الشائعة",
+q1:"ما هو CHECKMA؟",a1:"CHECKMA هي أداة مجانية لفحص تسريبات VPN. تتحقق من IP، WebRTC، DNS، و IPv6 للتأكد من أن اتصالك آمن.",
+q2:"هل الأداة مجانية؟",a2:"نعم، CHECKMA مجانية 100%. لا تحتاج إلى تسجيل أو دفع. قد نحصل على عمولة إذا اشتريت VPN من خلال روابطنا التابعة.",
+q3:"هل تخزنون بياناتي؟",a3:"لا. لا نخزن أي بيانات في قواعد البيانات. المعلومات تظهر لك مباشرة وتُحذف عند إغلاق الصفحة.",
+q4:"ما هو تسريب VPN؟",a4:"تسريب VPN هو عندما يكشف VPN الخاص بك بيانات حقيقية (مثل IP الحقيقي) رغم أنه يعمل. يمكن أن يحدث عبر WebRTC، DNS، أو IPv6.",
+q5:"ما هو تسريب WebRTC؟",a5:"WebRTC هو تقنية تستخدمها المتصفحات للمكالمات. يمكن أن يكشف IP الحقيقي حتى مع VPN نشط. قمنا بفحصه لك.",
+q6:"ما هو تسريب DNS؟",a6:"عندما تزور موقعاً، يترجم DNS الاسم إلى عنوان IP. إذا كان DNS الخاص بك لا يمر عبر VPN، يمكن لمزود الإنترنت رؤية المواقع التي تزورها.",
+q7:"ما هو تسريب IPv6؟",a7:"بعض VPNs تدعم IPv4 فقط. إذا كان جهازك يستخدم IPv6، فقد يكشف IP الحقيقي. نتحقق من ذلك لك.",
+q8:"كيف أحمي نفسي؟",a8:"استخدم VPN موثوقاً، عطّل WebRTC في المتصفح، واستخدم DNS آمن (مثل Cloudflare أو NextDNS).",
+q9:"ما مدى دقة النتائج؟",a9:"النتائج تقريبية وليست مضمونة بنسبة 100%. نوصي بالتحقق من مصادر أخرى والتأكد من إعداداتك.",
+q10:"هل الأداة آمنة؟",a10:"نعم، آمنة 100%. نستخدم HTTPS، ولا نخزن أي بيانات، وكل الفحص يتم في متصفحك.",
+vpn_choose:"🔒 اختر VPN موثوق:",back:"← العودة إلى الأداة"
+},
+en: {
+title:"Frequently Asked Questions",
+q1:"What is CHECKMA?",a1:"CHECKMA is a free VPN leak test tool. It checks IP, WebRTC, DNS, and IPv6 to ensure your connection is secure.",
+q2:"Is it free?",a2:"Yes, CHECKMA is 100% free. No registration or payment needed. We may earn a commission if you buy a VPN through our affiliate links.",
+q3:"Do you store my data?",a3:"No. We don't store any data in databases. Information is displayed to you directly and deleted when you close the page.",
+q4:"What is a VPN leak?",a4:"A VPN leak is when your VPN exposes real data (like your real IP) despite being active. It can happen via WebRTC, DNS, or IPv6.",
+q5:"What is a WebRTC leak?",a5:"WebRTC is a technology used by browsers for calls. It can expose your real IP even with an active VPN. We test it for you.",
+q6:"What is a DNS leak?",a6:"When you visit a site, DNS translates the name to an IP. If your DNS doesn't go through the VPN, your ISP can see the sites you visit.",
+q7:"What is an IPv6 leak?",a7:"Some VPNs only support IPv4. If your device uses IPv6, it may expose your real IP. We check that for you.",
+q8:"How do I protect myself?",a8:"Use a trusted VPN, disable WebRTC in your browser, and use secure DNS (like Cloudflare or NextDNS).",
+q9:"How accurate are the results?",a9:"Results are approximate and not 100% guaranteed. We recommend verifying from other sources and checking your settings.",
+q10:"Is the tool safe?",a10:"Yes, 100% safe. We use HTTPS, store no data, and all testing happens in your browser.",
+vpn_choose:"🔒 Choose a trusted VPN:",back:"← Back to Tool"
+},
+es: {
+title:"Preguntas Frecuentes",
+q1:"¿Qué es CHECKMA?",a1:"CHECKMA es una herramienta gratuita de prueba de fugas VPN. Verifica IP, WebRTC, DNS e IPv6 para asegurar tu conexión.",
+q2:"¿Es gratis?",a2:"Sí, CHECKMA es 100% gratis. Sin registro ni pago. Podemos ganar una comisión si compras un VPN a través de nuestros enlaces.",
+q3:"¿Almacenan mis datos?",a3:"No. No almacenamos datos en bases de datos. La información se muestra directamente y se elimina al cerrar la página.",
+q4:"¿Qué es una fuga VPN?",a4:"Una fuga VPN es cuando tu VPN expone datos reales (como tu IP real) aunque esté activo. Puede ocurrir vía WebRTC, DNS o IPv6.",
+q5:"¿Qué es una fuga WebRTC?",a5:"WebRTC es una tecnología usada por navegadores para llamadas. Puede exponer tu IP real incluso con VPN activo.",
+q6:"¿Qué es una fuga DNS?",a6:"Cuando visitas un sitio, DNS traduce el nombre a una IP. Si tu DNS no pasa por el VPN, tu ISP puede ver los sitios que visitas.",
+q7:"¿Qué es una fuga IPv6?",a7:"Algunos VPNs solo soportan IPv4. Si tu dispositivo usa IPv6, puede exponer tu IP real. Lo verificamos.",
+q8:"¿Cómo me protejo?",a8:"Usa un VPN confiable, desactiva WebRTC en el navegador y usa DNS seguro (Cloudflare o NextDNS).",
+q9:"¿Qué tan precisos son los resultados?",a9:"Los resultados son aproximados y no garantizados al 100%. Recomendamos verificar en otras fuentes.",
+q10:"¿Es segura la herramienta?",a10:"Sí, 100% segura. Usamos HTTPS, no almacenamos datos, y todo se prueba en tu navegador.",
+vpn_choose:"🔒 Elige una VPN confiable:",back:"← Volver a la Herramienta"
+},
+fr: {
+title:"Questions Fréquentes",
+q1:"Qu'est-ce que CHECKMA ?",a1:"CHECKMA est un outil gratuit de test de fuite VPN. Il vérifie IP, WebRTC, DNS et IPv6 pour assurer votre connexion.",
+q2:"Est-ce gratuit ?",a2:"Oui, CHECKMA est 100% gratuit. Sans inscription ni paiement. Nous pouvons percevoir une commission via nos liens affiliés.",
+q3:"Stockez-vous mes données ?",a3:"Non. Nous ne stockons aucune donnée. Les informations sont affichées directement et supprimées à la fermeture.",
+q4:"Qu'est-ce qu'une fuite VPN ?",a4:"Une fuite VPN est quand votre VPN expose des données réelles (comme votre vraie IP) malgré qu'il soit actif.",
+q5:"Qu'est-ce qu'une fuite WebRTC ?",a5:"WebRTC est une technologie utilisée par les navigateurs pour les appels. Il peut exposer votre vraie IP même avec un VPN actif.",
+q6:"Qu'est-ce qu'une fuite DNS ?",a6:"Quand vous visitez un site, DNS traduit le nom en IP. Si votre DNS ne passe pas par le VPN, votre FAI peut voir les sites visités.",
+q7:"Qu'est-ce qu'une fuite IPv6 ?",a7:"Certains VPNs ne supportent que IPv4. Si votre appareil utilise IPv6, il peut exposer votre vraie IP. Nous le vérifions.",
+q8:"Comment me protéger ?",a8:"Utilisez un VPN fiable, désactivez WebRTC dans le navigateur et utilisez un DNS sécurisé (Cloudflare ou NextDNS).",
+q9:"Quelle est la précision des résultats ?",a9:"Les résultats sont approximatifs et non garantis à 100%. Vérifiez auprès d'autres sources.",
+q10:"L'outil est-il sûr ?",a10:"Oui, 100% sûr. Nous utilisons HTTPS, ne stockons rien, et tout se passe dans votre navigateur.",
+vpn_choose:"🔒 Choisissez un VPN fiable :",back:"← Retour à l'Outil"
+}
+};
+
+let currentLang = localStorage.getItem('checkma_lang') || 'ar';
+
+function setLang(lang) {
+currentLang = lang;
+localStorage.setItem('checkma_lang', lang);
+const html = document.getElementById('htmlRoot');
+html.lang = lang;
+html.dir = (lang === 'ar') ? 'rtl' : 'ltr';
+document.querySelectorAll('[data-i18n]').forEach(el => {
+const key = el.getAttribute('data-i18n');
+if (translations[lang][key]) el.textContent = translations[lang][key];
+});
+['ar','en','es','fr'].forEach(l => {
+const btn = document.getElementById('btn-' + l);
+if (btn) btn.classList.toggle('active', l === lang);
+});
+}
+
+setLang(currentLang);
+</script>
+</body>
+  </html>
