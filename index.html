@@ -489,6 +489,14 @@ alert('✅ ' + visibleIP + ' ' + (t.copied || 'copied!'));
 prompt('Copy:', visibleIP);
 });
   }
+  function updateLastCheck() {
+const el = document.getElementById('lastCheck');
+if (!el) return;
+const now = new Date();
+const time = now.getHours().toString().padStart(2,'0') + ':' + now.getMinutes().toString().padStart(2,'0');
+const t = translations[currentLang];
+el.textContent = '⏰ ' + (t.last_check || 'آخر فحص:') + ' ' + time;
+  }
   setLang(currentLang);
 </script>
 </body>
