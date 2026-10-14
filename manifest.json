@@ -1,1 +1,21 @@
 
+{
+  "name": "CHECKMA - VPN Leak Test",
+  "short_name": "CHECKMA",
+  "description": "Free VPN leak test tool. Check if your VPN leaks your real IP, WebRTC, DNS, or IPv6.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#00D9FF",
+  "orientation": "portrait",
+  "lang": "ar",
+  "dir": "rtl",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}
