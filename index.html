@@ -447,7 +447,21 @@ updateSummary();
 btn.disabled = false;
 }
 
-setLang(currentLang);
+function shareResult() {
+const url = 'https://checkmapage.pages.dev';
+const t = translations[currentLang];
+const title = 'CHECKMA - VPN Leak Test';
+if (navigator.share) {
+navigator.share({ title: title, text: title, url: url }).catch(() => {});
+} else {
+navigator.clipboard.writeText(url).then(() => {
+alert(t.share_copied);
+}).catch(() => {
+prompt('Copy:', url);
+});
+}
+  }
+  setLang(currentLang);
 </script>
 </body>
 </html>
