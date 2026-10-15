@@ -1,4 +1,4 @@
-const CACHE_NAME = 'checkma-v2';
+const CACHE_NAME = 'checkma-v3';
 const urlsToCache = [
   '/',
   '/index.html',
