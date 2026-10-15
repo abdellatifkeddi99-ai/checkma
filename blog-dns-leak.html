@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" id="htmlRoot">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>تسريب DNS: ما هو وكيف تحمي نفسك؟ - CHECKMA</title>
+<meta name="description" content="تعرف على تسريب DNS، لماذا يحدث، وكيف يمكنك منعه.">
+<style>
+*{box-sizing:border-box}
+body{background:#000;color:#fff;font-family:Arial,sans-serif;padding:60px 20px 20px 20px;margin:0;line-height:1.9}
+.lang-switch{position:fixed;top:10px;left:10px;z-index:100;display:flex;gap:5px;background:#111;padding:5px;border-radius:8px;border:1px solid #333}
+.lang-switch button{background:transparent;color:#888;border:none;padding:6px 10px;border-radius:5px;font-size:12px;font-weight:bold;cursor:pointer}
+.lang-switch button.active{background:#00D9FF;color:#000}
+.container{max-width:750px;margin:0 auto;background:#111;border-radius:12px;padding:30px 20px}
+h1{color:#00D9FF;font-size:24px;margin-bottom:10px;line-height:1.4}
+.meta{color:#666;font-size:12px;font-style:italic;margin-bottom:25px;display:block}
+h2{color:#00D9FF;font-size:18px;margin-top:28px;margin-bottom:10px;border-inline-start:3px solid #00D9FF;padding-inline-start:10px}
+p,li{color:#ccc;font-size:15px;margin-bottom:12px}
+ul{padding-inline-start:20px}
+.cta{background:#1a1a1a;border-radius:8px;padding:20px;margin:25px 0;border-inline-start:3px solid #00D9FF;text-align:center}
+.cta a{display:inline-block;padding:12px 28px;background:#00D9FF;color:#000;border-radius:8px;text-decoration:none;font-weight:bold;margin-top:10px}
+.back{display:inline-block;margin-top:30px;padding:12px 24px;background:#fff;color:#000;border-radius:8px;font-weight:bold;text-decoration:none}
+.back:hover{background:#00D9FF}
+.footer{color:#555;font-size:12px;text-align:center;margin-top:30px}
+hr{border:none;border-top:1px solid #222;margin:30px 0}
+.vpn-box{margin-top:20px;padding:15px;background:#1a1a1a;border-radius:8px;text-align:center}
+.vpn-box p{color:#00D9FF;font-weight:bold;margin-bottom:12px}
+.vpn-box a{display:inline-block;padding:10px 20px;border-radius:6px;text-decoration:none;font-weight:bold;margin:5px}
+.vpn-nord{background:#00D9FF;color:#000}
+.vpn-surf{background:#fff;color:#000}
+</style>
+</head>
+<body>
+<div class="lang-switch">
+<button onclick="setLang('ar')" id="btn-ar">ع</button>
+<button onclick="setLang('en')" id="btn-en">EN</button>
+<button onclick="setLang('es')" id="btn-es">ES</button>
+<button onclick="setLang('fr')" id="btn-fr">FR</button>
+</div>
+
+<div class="container">
+<h1 data-i18n="title">تسريب DNS: ما هو وكيف تحمي نفسك؟</h1>
+<span class="meta" data-i18n="meta">📅 14 أكتوبر 2026 · 4 دقائق قراءة</span>
+<hr>
+
+<p data-i18n="p1">عندما تزور موقعاً، يترجم DNS اسم الموقع (مثل google.com) إلى عنوان IP. إذا لم يمر هذا الطلب عبر VPN، فإن مزود الإنترنت يرى كل المواقع التي تزورها.</p>
+
+<h2 data-i18n="h2_1">1. ما هو تسريب DNS؟</h2>
+<p data-i18n="p2">تسريب DNS هو عندما يرسل جهازك طلبات DNS خارج نفق VPN، مما يكشف للمواقع التي تزورها. حتى مع VPN نشط، يمكن أن يحدث هذا إذا:</p>
+<ul>
+<li data-i18n="li1">الإعدادات غير صحيحة.</li>
+<li data-i18n="li2">VPN لا يدعم حماية DNS.</li>
+<li data-i18n="li3">نظام التشغيل يتجاوز إعدادات VPN.</li>
+</ul>
+
+<h2 data-i18n="h2_2">2. لماذا هو خطير؟</h2>
+<p data-i18n="p3">تسريب DNS خطير لأنه:</p>
+<ul>
+<li data-i18n="li4">يكشف المواقع التي تزورها لمزود الإنترنت.</li>
+<li data-i18n="li5">يمكن استخدامه لبناء ملف عنك.</li>
+<li data-i18n="li6">يبطل فعالية VPN بالكامل.</li>
+</ul>
+
+<div class="cta">
+<p data-i18n="cta_text">🔍 افحص DNS الخاص بك الآن</p>
+<a href="/" data-i18n="cta_btn">افحص DNS الآن</a>
+</div>
+
+<h2 data-i18n="h2_3">3. كيف تحمي نفسك؟</h2>
+<ul>
+<li data-i18n="li7">استخدم VPN يدعم حماية DNS.</li>
+<li data-i18n="li8">استخدم DNS آمن (Cloudflare: 1.1.1.1، NextDNS).</li>
+<li data-i18n="li9">تأكد من إعدادات DNS في نظام التشغيل.</li>
+<li data-i18n="li10">افحص بشكل دوري.</li>
+</ul>
+
+<div class="vpn-box">
+<p data-i18n="vpn_choose">🔒 اختر VPN موثوق:</p>
+<a href="https://nordvpn.com" target="_blank" rel="noopener" class="vpn-nord">NordVPN</a>
+<a href="https://surfshark.com" target="_blank" rel="noopener" class="vpn-surf">Surfshark</a>
+</div>
+
+<hr>
+
+<div style="text-align:center">
+<a href="/blog.html" class="back" data-i18n="back">← العودة إلى المدونة</a>
+</div>
+
+<p class="footer">CHECKMA © 2026</p>
+</div>
+
+<script>
+const translations = {
+ar: {
+title:"تسريب DNS: ما هو وكيف تحمي نفسك؟",
+meta:"📅 14 أكتوبر 2026 · 4 دقائق قراءة",
+p1:"عندما تزور موقعاً، يترجم DNS اسم الموقع (مثل google.com) إلى عنوان IP. إذا لم يمر هذا الطلب عبر VPN، فإن مزود الإنترنت يرى كل المواقع التي تزورها.",
+h2_1:"1. ما هو تسريب DNS؟",
+p2:"تسريب DNS هو عندما يرسل جهازك طلبات DNS خارج نفق VPN، مما يكشف للمواقع التي تزورها. حتى مع VPN نشط، يمكن أن يحدث هذا إذا:",
+li1:"الإعدادات غير صحيحة.",
+li2:"VPN لا يدعم حماية DNS.",
+li3:"نظام التشغيل يتجاوز إعدادات VPN.",
+h2_2:"2. لماذا هو خطير؟",
+p3:"تسريب DNS خطير لأنه:",
+li4:"يكشف المواقع التي تزورها لمزود الإنترنت.",
+li5:"يمكن استخدامه لبناء ملف عنك.",
+li6:"يبطل فعالية VPN بالكامل.",
+cta_text:"🔍 افحص DNS الخاص بك الآن",
+cta_btn:"افحص DNS الآن",
+h2_3:"3. كيف تحمي نفسك؟",
+li7:"استخدم VPN يدعم حماية DNS.",
+li8:"استخدم DNS آمن (Cloudflare: 1.1.1.1، NextDNS).",
+li9:"تأكد من إعدادات DNS في نظام التشغيل.",
+li10:"افحص بشكل دوري.",
+vpn_choose:"🔒 اختر VPN موثوق:",
+back:"← العودة إلى المدونة"
+},
+en: {
+title:"DNS Leak: What is it and how to protect yourself?",
+meta:"📅 October 14, 2026 · 4 min read",
+p1:"When you visit a website, DNS translates the domain name (like google.com) to an IP address. If this request doesn't go through the VPN, your ISP sees every site you visit.",
+h2_1:"1. What is a DNS leak?",
+p2:"A DNS leak is when your device sends DNS requests outside the VPN tunnel, exposing the sites you visit. Even with an active VPN, this can happen if:",
+li1:"Settings are incorrect.",
+li2:"VPN doesn't support DNS protection.",
+li3:"Operating system bypasses VPN settings.",
+h2_2:"2. Why is it dangerous?",
+p3:"DNS leaks are dangerous because they:",
+li4:"Expose the sites you visit to your ISP.",
+li5:"Can be used to build a profile about you.",
+li6:"Completely defeat the VPN's purpose.",
+cta_text:"🔍 Test your DNS now",
+cta_btn:"Test DNS Now",
+h2_3:"3. How to protect yourself?",
+li7:"Use a VPN that supports DNS protection.",
+li8:"Use secure DNS (Cloudflare: 1.1.1.1, NextDNS).",
+li9:"Check DNS settings in your OS.",
+li10:"Test periodically.",
+vpn_choose:"🔒 Choose a trusted VPN:",
+back:"← Back to Blog"
+},
+es: {
+title:"Fuga DNS: ¿Qué es y cómo protegerte?",
+meta:"📅 14 de octubre de 2026 · 4 min de lectura",
+p1:"Cuando visitas un sitio, DNS traduce el nombre (como google.com) a una dirección IP. Si esta solicitud no pasa por el VPN, tu ISP ve todos los sitios que visitas.",
+h2_1:"1. ¿Qué es una fuga DNS?",
+p2:"Una fuga DNS es cuando tu dispositivo envía solicitudes DNS fuera del túnel VPN, exponiendo los sitios que visitas. Incluso con VPN activo, esto puede ocurrir si:",
+li1:"La configuración es incorrecta.",
+li2:"El VPN no soporta protección DNS.",
+li3:"El sistema operativo omite la configuración del VPN.",
+h2_2:"2. ¿Por qué es peligroso?",
+p3:"Las fugas DNS son peligrosas porque:",
+li4:"Exponen los sitios que visitas a tu ISP.",
+li5:"Pueden usarse para crear un perfil sobre ti.",
+li6:"Anulan por completo el propósito del VPN.",
+cta_text:"🔍 Prueba tu DNS ahora",
+cta_btn:"Probar DNS ahora",
+h2_3:"3. ¿Cómo protegerte?",
+li7:"Usa un VPN que soporte protección DNS.",
+li8:"Usa DNS seguro (Cloudflare: 1.1.1.1, NextDNS).",
+li9:"Verifica la configuración DNS en tu SO.",
+li10:"Prueba periódicamente.",
+vpn_choose:"🔒 Elige una VPN confiable:",
+back:"← Volver al Blog"
+},
+fr: {
+title:"Fuite DNS : qu'est-ce que c'est et comment se protéger ?",
+meta:"📅 14 octobre 2026 · 4 min de lecture",
+p1:"Lorsque vous visitez un site, DNS traduit le nom de domaine (comme google.com) en adresse IP. Si cette requête ne passe pas par le VPN, votre FAI voit tous les sites que vous visitez.",
+h2_1:"1. Qu'est-ce qu'une fuite DNS ?",
+p2:"Une fuite DNS se produit lorsque votre appareil envoie des requêtes DNS en dehors du tunnel VPN, exposant les sites que vous visitez. Même avec un VPN actif, cela peut arriver si :",
+li1:"Les paramètres sont incorrects.",
+li2:"Le VPN ne prend pas en charge la protection DNS.",
+li3:"Le système d'exploitation contourne les paramètres VPN.",
+h2_2:"2. Pourquoi est-ce dangereux ?",
+p3:"Les fuites DNS sont dangereuses car elles :",
+li4:"Exposent les sites que vous visitez à votre FAI.",
+li5:"Peuvent servir à créer un profil sur vous.",
+li6:"Annuent complètement l'objectif du VPN.",
+cta_text:"🔍 Testez votre DNS maintenant",
+cta_btn:"Tester le DNS",
+h2_3:"3. Comment vous protéger ?",
+li7:"Utilisez un VPN qui prend en charge la protection DNS.",
+li8:"Utilisez un DNS sécurisé (Cloudflare : 1.1.1.1, NextDNS).",
+li9:"Vérifiez les paramètres DNS de votre OS.",
+li10:"Testez régulièrement.",
+vpn_choose:"🔒 Choisissez un VPN fiable :",
+back:"← Retour au Blog"
+}
+};
+
+let currentLang = localStorage.getItem('checkma_lang') || 'ar';
+
+function setLang(lang) {
+currentLang = lang;
+localStorage.setItem('checkma_lang', lang);
+const html = document.getElementById('htmlRoot');
+html.lang = lang;
+html.dir = (lang === 'ar') ? 'rtl' : 'ltr';
+document.querySelectorAll('[data-i18n]').forEach(el => {
+const key = el.getAttribute('data-i18n');
+if (translations[lang][key]) el.textContent = translations[lang][key];
+});
+['ar','en','es','fr'].forEach(l => {
+const btn = document.getElementById('btn-' + l);
+if (btn) btn.classList.toggle('active', l === lang);
+});
+}
+
+setLang(currentLang);
+</script>
+</body>
+</html>
