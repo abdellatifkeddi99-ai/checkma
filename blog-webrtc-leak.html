@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" id="htmlRoot">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>تسريب WebRTC: كيف تمنعه في متصفحك؟ - CHECKMA</title>
+<meta name="description" content="WebRTC يمكن أن يكشف IP الحقيقي حتى مع VPN نشط. تعلم كيف تحمي نفسك.">
+<style>
+*{box-sizing:border-box}
+body{background:#000;color:#fff;font-family:Arial,sans-serif;padding:60px 20px 20px 20px;margin:0;line-height:1.9}
+.lang-switch{position:fixed;top:10px;left:10px;z-index:100;display:flex;gap:5px;background:#111;padding:5px;border-radius:8px;border:1px solid #333}
+.lang-switch button{background:transparent;color:#888;border:none;padding:6px 10px;border-radius:5px;font-size:12px;font-weight:bold;cursor:pointer}
+.lang-switch button.active{background:#00D9FF;color:#000}
+.container{max-width:750px;margin:0 auto;background:#111;border-radius:12px;padding:30px 20px}
+h1{color:#00D9FF;font-size:24px;margin-bottom:10px;line-height:1.4}
+.meta{color:#666;font-size:12px;font-style:italic;margin-bottom:25px;display:block}
+h2{color:#00D9FF;font-size:18px;margin-top:28px;margin-bottom:10px;border-inline-start:3px solid #00D9FF;padding-inline-start:10px}
+p,li{color:#ccc;font-size:15px;margin-bottom:12px}
+ul{padding-inline-start:20px}
+.cta{background:#1a1a1a;border-radius:8px;padding:20px;margin:25px 0;border-inline-start:3px solid #00D9FF;text-align:center}
+.cta a{display:inline-block;padding:12px 28px;background:#00D9FF;color:#000;border-radius:8px;text-decoration:none;font-weight:bold;margin-top:10px}
+.back{display:inline-block;margin-top:30px;padding:12px 24px;background:#fff;color:#000;border-radius:8px;font-weight:bold;text-decoration:none}
+.back:hover{background:#00D9FF}
+.footer{color:#555;font-size:12px;text-align:center;margin-top:30px}
+hr{border:none;border-top:1px solid #222;margin:30px 0}
+.vpn-box{margin-top:20px;padding:15px;background:#1a1a1a;border-radius:8px;text-align:center}
+.vpn-box p{color:#00D9FF;font-weight:bold;margin-bottom:12px}
+.vpn-box a{display:inline-block;padding:10px 20px;border-radius:6px;text-decoration:none;font-weight:bold;margin:5px}
+.vpn-nord{background:#00D9FF;color:#000}
+.vpn-surf{background:#fff;color:#000}
+</style>
+</head>
+<body>
+<div class="lang-switch">
+<button onclick="setLang('ar')" id="btn-ar">ع</button>
+<button onclick="setLang('en')" id="btn-en">EN</button>
+<button onclick="setLang('es')" id="btn-es">ES</button>
+<button onclick="setLang('fr')" id="btn-fr">FR</button>
+</div>
+
+<div class="container">
+<h1 data-i18n="title">تسريب WebRTC: كيف تمنعه في متصفحك؟</h1>
+<span class="meta" data-i18n="meta">📅 13 أكتوبر 2026 · 4 دقائق قراءة</span>
+<hr>
+
+<p data-i18n="p1">WebRTC هي تقنية موجودة في كل المتصفحات الحديثة، وتستخدم للمكالمات الصوتية والمرئية. لكنها قد تكشف IP الحقيقي الخاص بك حتى مع VPN نشط.</p>
+
+<h2 data-i18n="h2_1">1. ما هو WebRTC؟</h2>
+<p data-i18n="p2">WebRTC (Web Real-Time Communication) هي تقنية تسمح للمتصفحات بالتواصل المباشر. تستخدمها تطبيقات مثل Google Meet، Zoom، و WhatsApp Web. المشكلة أن WebRTC يحتاج اتصالاً مباشراً، وقد يكشف IP الحقيقي خارج نفق VPN.</p>
+
+<h2 data-i18n="h2_2">2. لماذا يحدث التسريب؟</h2>
+<p data-i18n="p3">WebRTC يستخدم STUN servers لجلب عنوان IP العام. إذا كانت هذه الطلبات لا تمر عبر VPN، يكشف المتصفح IP الحقيقي. المشكلة أن:</p>
+<ul>
+<li data-i18n="li1">معظم VPNs لا تعترض طلبات WebRTC.</li>
+<li data-i18n="li2">المتصفح يرسل الطلبات مباشرة.</li>
+<li data-i18n="li3">حتى بعض VPNs المدفوعة لديها هذا المشكل.</li>
+</ul>
+
+<div class="cta">
+<p data-i18n="cta_text">🔍 افحص WebRTC الخاص بك الآن</p>
+<a href="/" data-i18n="cta_btn">افحص WebRTC الآن</a>
+</div>
+
+<h2 data-i18n="h2_3">3. كيف تحمي نفسك؟</h2>
+<ul>
+<li data-i18n="li4"><b>Firefox:</b> اكتب about:config → ابحث عن media.peerconnection.enabled → اضبطها على false.</li>
+<li data-i18n="li5"><b>Chrome:</b> استخدم إضافة WebRTC Leak Prevent.</li>
+<li data-i18n="li6"><b>Safari:</b> عطّل WebRTC من الإعدادات.</li>
+<li data-i18n="li7">أو استخدم VPN يدعم حماية WebRTC.</li>
+</ul>
+
+<div class="vpn-box">
+<p data-i18n="vpn_choose">🔒 اختر VPN موثوق:</p>
+<a href="https://nordvpn.com" target="_blank" rel="noopener" class="vpn-nord">NordVPN</a>
+<a href="https://surfshark.com" target="_blank" rel="noopener" class="vpn-surf">Surfshark</a>
+</div>
+
+<hr>
+
+<div style="text-align:center">
+<a href="/blog.html" class="back" data-i18n="back">← العودة إلى المدونة</a>
+</div>
+
+<p class="footer">CHECKMA © 2026</p>
+</div>
+
+<script>
+const translations = {
+ar: {
+title:"تسريب WebRTC: كيف تمنعه في متصفحك؟",
+meta:"📅 13 أكتوبر 2026 · 4 دقائق قراءة",
+p1:"WebRTC هي تقنية موجودة في كل المتصفحات الحديثة، وتستخدم للمكالمات الصوتية والمرئية. لكنها قد تكشف IP الحقيقي الخاص بك حتى مع VPN نشط.",
+h2_1:"1. ما هو WebRTC؟",
+p2:"WebRTC (Web Real-Time Communication) هي تقنية تسمح للمتصفحات بالتواصل المباشر. تستخدمها تطبيقات مثل Google Meet، Zoom، و WhatsApp Web. المشكلة أن WebRTC يحتاج اتصالاً مباشراً، وقد يكشف IP الحقيقي خارج نفق VPN.",
+h2_2:"2. لماذا يحدث التسريب؟",
+p3:"WebRTC يستخدم STUN servers لجلب عنوان IP العام. إذا كانت هذه الطلبات لا تمر عبر VPN، يكشف المتصفح IP الحقيقي. المشكلة أن:",
+li1:"معظم VPNs لا تعترض طلبات WebRTC.",
+li2:"المتصفح يرسل الطلبات مباشرة.",
+li3:"حتى بعض VPNs المدفوعة لديها هذا المشكل.",
+cta_text:"🔍 افحص WebRTC الخاص بك الآن",
+cta_btn:"افحص WebRTC الآن",
+h2_3:"3. كيف تحمي نفسك؟",
+li4:"Firefox: اكتب about:config → ابحث عن media.peerconnection.enabled → اضبطها على false.",
+li5:"Chrome: استخدم إضافة WebRTC Leak Prevent.",
+li6:"Safari: عطّل WebRTC من الإعدادات.",
+li7:"أو استخدم VPN يدعم حماية WebRTC.",
+vpn_choose:"🔒 اختر VPN موثوق:",
+back:"← العودة إلى المدونة"
+},
+en: {
+title:"WebRTC Leak: How to prevent it in your browser?",
+meta:"📅 October 13, 2026 · 4 min read",
+p1:"WebRTC is a technology present in all modern browsers, used for voice and video calls. But it can expose your real IP even with an active VPN.",
+h2_1:"1. What is WebRTC?",
+p2:"WebRTC (Web Real-Time Communication) is a technology that allows browsers to communicate directly. It's used by apps like Google Meet, Zoom, and WhatsApp Web. The problem is that WebRTC needs a direct connection, and may expose your real IP outside the VPN tunnel.",
+h2_2:"2. Why does the leak happen?",
+p3:"WebRTC uses STUN servers to fetch the public IP address. If these requests don't go through the VPN, the browser exposes your real IP. The problem is that:",
+li1:"Most VPNs don't intercept WebRTC requests.",
+li2:"The browser sends requests directly.",
+li3:"Even some paid VPNs have this issue.",
+cta_text:"🔍 Test your WebRTC now",
+cta_btn:"Test WebRTC Now",
+h2_3:"3. How to protect yourself?",
+li4:"Firefox: Type about:config → search media.peerconnection.enabled → set to false.",
+li5:"Chrome: Use WebRTC Leak Prevent extension.",
+li6:"Safari: Disable WebRTC in settings.",
+li7:"Or use a VPN that supports WebRTC protection.",
+vpn_choose:"🔒 Choose a trusted VPN:",
+back:"← Back to Blog"
+},
+es: {
+title:"Fuga WebRTC: ¿Cómo prevenirla en tu navegador?",
+meta:"📅 13 de octubre de 2026 · 4 min de lectura",
+p1:"WebRTC es una tecnología presente en todos los navegadores modernos, utilizada para llamadas de voz y video. Pero puede exponer tu IP real incluso con VPN activo.",
+h2_1:"1. ¿Qué es WebRTC?",
+p2:"WebRTC (Web Real-Time Communication) es una tecnología que permite a los navegadores comunicarse directamente. La usan apps como Google Meet, Zoom y WhatsApp Web. El problema es que WebRTC necesita una conexión directa, y puede exponer tu IP real fuera del túnel VPN.",
+h2_2:"2. ¿Por qué ocurre la fuga?",
+p3:"WebRTC usa servidores STUN para obtener la dirección IP pública. Si estas solicitudes no pasan por el VPN, el navegador expone tu IP real. El problema es que:",
+li1:"La mayoría de los VPN no interceptan solicitudes WebRTC.",
+li2:"El navegador envía las solicitudes directamente.",
+li3:"Incluso algunos VPN de pago tienen este problema.",
+cta_text:"🔍 Prueba tu WebRTC ahora",
+cta_btn:"Probar WebRTC ahora",
+h2_3:"3. ¿Cómo protegerte?",
+li4:"Firefox: Escribe about:config → busca media.peerconnection.enabled → ponlo en false.",
+li5:"Chrome: Usa la extensión WebRTC Leak Prevent.",
+li6:"Safari: Desactiva WebRTC en la configuración.",
+li7:"O usa un VPN que soporte protección WebRTC.",
+vpn_choose:"🔒 Elige una VPN confiable:",
+back:"← Volver al Blog"
+},
+fr: {
+title:"Fuite WebRTC : comment l'empêcher dans votre navigateur ?",
+meta:"📅 13 octobre 2026 · 4 min de lecture",
+p1:"WebRTC est une technologie présente dans tous les navigateurs modernes, utilisée pour les appels audio et vidéo. Mais elle peut exposer votre vraie IP même avec un VPN actif.",
+h2_1:"1. Qu'est-ce que WebRTC ?",
+p2:"WebRTC (Web Real-Time Communication) est une technologie qui permet aux navigateurs de communiquer directement. Elle est utilisée par des apps comme Google Meet, Zoom et WhatsApp Web. Le problème est que WebRTC a besoin d'une connexion directe, et peut exposer votre vraie IP en dehors du tunnel VPN.",
+h2_2:"2. Pourquoi la fuite se produit-elle ?",
+p3:"WebRTC utilise des serveurs STUN pour récupérer l'adresse IP publique. Si ces requêtes ne passent pas par le VPN, le navigateur expose votre vraie IP. Le problème est que :",
+li1:"La plupart des VPN n'interceptent pas les requêtes WebRTC.",
+li2:"Le navigateur envoie les requêtes directement.",
+li3:"Même certains VPN payants ont ce problème.",
+cta_text:"🔍 Testez votre WebRTC maintenant",
+cta_btn:"Tester WebRTC",
+h2_3:"3. Comment vous protéger ?",
+li4:"Firefox : Tapez about:config → cherchez media.peerconnection.enabled → mettez false.",
+li5:"Chrome : Utilisez l'extension WebRTC Leak Prevent.",
+li6:"Safari : Désactivez WebRTC dans les paramètres.",
+li7:"Ou utilisez un VPN qui prend en charge la protection WebRTC.",
+vpn_choose:"🔒 Choisissez un VPN fiable :",
+back:"← Retour au Blog"
+}
+};
+
+let currentLang = localStorage.getItem('checkma_lang') || 'ar';
+
+function setLang(lang) {
+currentLang = lang;
+localStorage.setItem('checkma_lang', lang);
+const html = document.getElementById('htmlRoot');
+html.lang = lang;
+html.dir = (lang === 'ar') ? 'rtl' : 'ltr';
+document.querySelectorAll('[data-i18n]').forEach(el => {
+const key = el.getAttribute('data-i18n');
+if (translations[lang][key]) el.textContent = translations[lang][key];
+});
+['ar','en','es','fr'].forEach(l => {
+const btn = document.getElementById('btn-' + l);
+if (btn) btn.classList.toggle('active', l === lang);
+});
+}
+
+setLang(currentLang);
+</script>
+</body>
+</html>
